@@ -34,7 +34,6 @@ jobs:
           YT_CHANNEL_ID: ${{ secrets.YT_CHANNEL_ID }}
           YT_CATEGORY_ID: ${{ secrets.YT_CATEGORY_ID }}
           YT_PRIVACY: ${{ secrets.YT_PRIVACY }}
-        shell: bash
         run: node check.js
 
       - name: Upload the one due Short
