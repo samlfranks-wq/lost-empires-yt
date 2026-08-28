@@ -1,0 +1,13 @@
+{
+  "name": "yt-publisher",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Uploads Shorts to YouTube from a public video URL via the Data API v3. No dependencies.",
+  "scripts": {
+    "auth": "node auth.js",
+    "check": "node check.js",
+    "post": "node post.js",
+    "queue": "node queue.js"
+  }
+}
