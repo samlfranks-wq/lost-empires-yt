@@ -47,6 +47,16 @@ async function main() {
     return;
   }
 
+  // One upload per day. The runner fires every 15 minutes (GitHub drops
+  // scheduled ticks, so one hourly tick is not reliable). Without this, a
+  // missed day would drain the backlog four times an hour.
+  const today = new Date().toISOString().slice(0, 10);
+  const doneToday = items.find((it) => it.posted && it.posted.slice(0, 10) === today);
+  if (doneToday) {
+    console.log(`Already uploaded today (${doneToday.at}). One per day - stopping.`);
+    return;
+  }
+
   const item = items[i];
   const env = loadEnv(['YT_CLIENT_ID', 'YT_CLIENT_SECRET', 'YT_REFRESH_TOKEN']);
   const snippet = buildSnippet({caption: item.caption, title: item.title, categoryId: env.YT_CATEGORY_ID});
