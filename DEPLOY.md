@@ -57,3 +57,21 @@ also what surfaces any bad secret, and you want to see that while you can fix it
 
 Actions tab → *Publish one Short* → ⋯ → **Disable workflow**. Or delete the
 future rows from `queue.json` and push.
+
+## ⚠ Do not run both schedulers at once
+
+There is also a Windows task, **"YT Publisher Queue"**, running `run_queue.cmd`
+hourly on the laptop. It reads the *local* `queue.json`; Actions reads the
+*repo* copy and commits back to it. Once GitHub Actions is live those two copies
+drift apart, and the same video can go up twice.
+
+**Before you fly:** disable the Windows task.
+
+    Task Scheduler → YT Publisher Queue → Disable
+
+or from an admin PowerShell:
+
+    Disable-ScheduledTask -TaskName "YT Publisher Queue"
+
+Re-enable it when you are back if you would rather run locally again — but pull
+the repo first so the local `queue.json` has the `posted` stamps Actions wrote.
