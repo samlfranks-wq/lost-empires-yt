@@ -5,7 +5,8 @@ name: Publish one Short
 # stops the same video going up twice.
 on:
   schedule:
-    - cron: '2,17,32,47 * * * *'      # hourly at :17 — off the hour, GH is less congested
+    - cron: '2,17,32,47 * * * *'   # every 15 min: GitHub drops scheduled ticks,
+                                    # and queue.js guards to one upload per day
   workflow_dispatch:           # lets you fire one by hand from the Actions tab
 
 permissions:
