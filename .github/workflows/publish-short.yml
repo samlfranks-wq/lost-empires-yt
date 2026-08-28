@@ -25,6 +25,18 @@ jobs:
         with:
           node-version: '20'
 
+      - name: Verify credentials still work
+        shell: bash
+        env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          YT_CHANNEL_ID: ${{ secrets.YT_CHANNEL_ID }}
+          YT_CATEGORY_ID: ${{ secrets.YT_CATEGORY_ID }}
+          YT_PRIVACY: ${{ secrets.YT_PRIVACY }}
+        shell: bash
+        run: node check.js
+
       - name: Upload the one due Short
         id: publish
         env:

@@ -10,3 +10,7 @@ run.log
 # Renders are fetched from the CDN at upload time, not stored in git.
 *.mp4
 *.wav
+
+# local helper that prints secrets to a console window
+show_secrets.cmd
+bronze_arm2.log
