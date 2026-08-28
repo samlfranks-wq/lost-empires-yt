@@ -27,7 +27,7 @@ export function loadEnv(required = ['YT_CLIENT_ID', 'YT_CLIENT_SECRET']) {
     const fromProcess = {};
     for (const k of ['YT_CLIENT_ID', 'YT_CLIENT_SECRET', 'YT_REFRESH_TOKEN',
                      'YT_CHANNEL_ID', 'YT_CATEGORY_ID', 'YT_PRIVACY']) {
-      if (process.env[k]) fromProcess[k] = process.env[k];
+      if (process.env[k]) fromProcess[k] = process.env[k].trim();  // a pasted secret can carry a trailing newline
     }
     const missingEnv = required.filter((k) => !fromProcess[k]);
     if (missingEnv.length) {
