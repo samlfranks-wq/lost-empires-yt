@@ -1,0 +1,49 @@
+name: Publish one Short
+
+# Runs hourly. queue.js uploads at most ONE due item per run and records the
+# result back into queue.json, which this workflow commits. That commit is what
+# stops the same video going up twice.
+on:
+  schedule:
+    - cron: '17 * * * *'      # hourly at :17 — off the hour, GH is less congested
+  workflow_dispatch:           # lets you fire one by hand from the Actions tab
+
+permissions:
+  contents: write              # needed to commit the updated queue.json
+
+concurrency:
+  group: publish-short         # never let two runs upload at once
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Upload the one due Short
+        id: publish
+        env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          YT_CHANNEL_ID: ${{ secrets.YT_CHANNEL_ID }}
+          YT_CATEGORY_ID: ${{ secrets.YT_CATEGORY_ID }}
+          YT_PRIVACY: ${{ secrets.YT_PRIVACY }}
+        run: node queue.js --confirm | tee run.log
+
+      - name: Commit queue.json if something was uploaded
+        run: |
+          if git diff --quiet queue.json; then
+            echo "Nothing due — queue.json unchanged."
+            exit 0
+          fi
+          git config user.name  "lost-empires-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add queue.json
+          git commit -m "publish: $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push

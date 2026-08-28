@@ -1,0 +1,12 @@
+# Never commit credentials — these live in GitHub repo secrets instead.
+.env
+.env.*
+!.env.example
+
+node_modules/
+queue.log
+run.log
+
+# Renders are fetched from the CDN at upload time, not stored in git.
+*.mp4
+*.wav
