@@ -21,6 +21,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0     # full history so the push retry below can rebase
 
       - uses: actions/setup-node@v5
         with:
@@ -61,4 +63,24 @@ jobs:
           git config user.email "actions@users.noreply.github.com"
           git add queue.json
           git commit -m "publish: $(date -u +%Y-%m-%dT%H:%MZ)"
-          git push
+
+          # This push is the thing that stops a double-post. The video is
+          # already on the channel; the "posted" marker only exists in this
+          # commit, and the one-per-day guard reads it back from the repo. If
+          # the push is rejected because main moved, and we simply give up, the
+          # next tick fifteen minutes later sees an unposted item and uploads
+          # the same Short again. So rebase onto the moved main and retry.
+          for attempt in 1 2 3; do
+            if git push; then exit 0; fi
+            echo "push rejected (attempt $attempt) — rebasing onto origin/main"
+            git fetch origin main
+            git rebase origin/main || {
+              git rebase --abort || true
+              echo "::error::queue.json conflicts with origin/main. The video IS"
+              echo "::error::uploaded — record it by hand before the next run, or"
+              echo "::error::it will be uploaded a second time."
+              exit 1
+            }
+          done
+          echo "::error::Upload succeeded but queue.json could not be pushed after 3 attempts."
+          exit 1
