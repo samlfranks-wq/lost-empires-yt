@@ -1,0 +1,35 @@
+name: Queue preflight
+
+# Looks ahead so a failure is news the day before, not a missed Short.
+# publish-short.yml only discovers a dead credential or an expired CDN link at
+# 18:00Z, with the upload already due. This runs at 07:00Z — eleven hours of
+# slack — and goes red on anything that would break the coming week.
+#
+# It uploads nothing and commits nothing.
+on:
+  schedule:
+    - cron: '0 7 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  preflight:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '20'
+
+      - name: Check credentials and every queued source URL
+        env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          YT_CHANNEL_ID: ${{ secrets.YT_CHANNEL_ID }}
+          YT_CATEGORY_ID: ${{ secrets.YT_CATEGORY_ID }}
+          YT_PRIVACY: ${{ secrets.YT_PRIVACY }}
+        run: node preflight.js --days 7
