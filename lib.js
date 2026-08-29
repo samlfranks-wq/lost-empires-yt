@@ -21,41 +21,43 @@ export function fail(msg) {
 }
 
 export function loadEnv(required = ['YT_CLIENT_ID', 'YT_CLIENT_SECRET']) {
-  // CI (GitHub Actions) has no .env — values arrive as repo secrets in the
-  // environment instead. Locally the file still wins, so nothing changes here.
-  if (!existsSync(ENV_PATH)) {
-    const fromProcess = {};
-    for (const k of ['YT_CLIENT_ID', 'YT_CLIENT_SECRET', 'YT_REFRESH_TOKEN',
-                     'YT_CHANNEL_ID', 'YT_CATEGORY_ID', 'YT_PRIVACY']) {
-      if (process.env[k]) fromProcess[k] = process.env[k].trim();  // a pasted secret can carry a trailing newline
-    }
-    const missingEnv = required.filter((k) => !fromProcess[k]);
-    if (missingEnv.length) {
-      fail(
-        [
-          'No .env file, and missing from the environment: ' + missingEnv.join(', '),
-          'Locally: copy .env.example to .env and fill it in.',
-          'In GitHub Actions: add them as repository secrets.',
-        ].join(String.fromCharCode(10))
-      );
-    }
-    fromProcess.YT_CATEGORY_ID = fromProcess.YT_CATEGORY_ID || '27';
-    fromProcess.YT_PRIVACY = (fromProcess.YT_PRIVACY || 'public').toLowerCase();
-    return fromProcess;
-  }
+  const KEYS = ['YT_CLIENT_ID', 'YT_CLIENT_SECRET', 'YT_REFRESH_TOKEN',
+                'YT_CHANNEL_ID', 'YT_CATEGORY_ID', 'YT_PRIVACY'];
+
+  // Both sources are always merged, never one or the other. CI (GitHub
+  // Actions) ships no .env of its own — values arrive as repo secrets in the
+  // environment — but check.js writes YT_CHANNEL_ID back to .env, and that
+  // one-key file must not go on to hide the secrets standing behind it.
+  // Locally the file still wins for every key it actually sets.
   const env = {};
-  for (const line of readFileSync(ENV_PATH, 'utf8').split('\n')) {
-    const t = line.trim();
-    if (!t || t.startsWith('#')) continue;
-    const i = t.indexOf('=');
-    if (i === -1) continue;
-    env[t.slice(0, i).trim()] = t
-      .slice(i + 1)
-      .trim()
-      .replace(/^["']|["']$/g, '');
+  for (const k of KEYS) {
+    if (process.env[k]) env[k] = process.env[k].trim();  // a pasted secret can carry a trailing newline
   }
+  if (existsSync(ENV_PATH)) {
+    for (const line of readFileSync(ENV_PATH, 'utf8').split('\n')) {
+      const t = line.trim();
+      if (!t || t.startsWith('#')) continue;
+      const i = t.indexOf('=');
+      if (i === -1) continue;
+      const key = t.slice(0, i).trim();
+      const value = t
+        .slice(i + 1)
+        .trim()
+        .replace(/^["']|["']$/g, '');
+      if (value) env[key] = value;  // an empty line in .env leaves the environment's value alone
+    }
+  }
+
   const missing = required.filter((k) => !env[k]);
-  if (missing.length) fail(`Missing in .env: ${missing.join(', ')}`);
+  if (missing.length) {
+    fail(
+      [
+        'Missing credentials: ' + missing.join(', '),
+        'Locally: copy .env.example to .env and fill it in.',
+        'In GitHub Actions: add them as repository secrets.',
+      ].join('\n')
+    );
+  }
   env.YT_CATEGORY_ID = env.YT_CATEGORY_ID || '27';
   env.YT_PRIVACY = (env.YT_PRIVACY || 'public').toLowerCase();
   return env;
