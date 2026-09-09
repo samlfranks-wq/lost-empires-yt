@@ -5,7 +5,12 @@ name: Publish one Short
 # stops the same video going up twice.
 on:
   schedule:
-    - cron: '2,17,32,47 * * * *'   # every 15 min: GitHub drops scheduled ticks,
+  # Narrowed 2026-09-09. Running every 15 min around the clock was 8,670 runs a
+  # month across the three repos - past the Actions quota on private repos, and
+  # when that runs out GitHub silently stops scheduled workflows. One post a day
+  # only needs a window: 8 attempts over two hours still absorbs dropped ticks,
+  # and a missed day is picked up by the next window because the item stays due.
+    - cron: '1,16,31,46 18-19 * * *'   # posts 18:00Z
                                     # and queue.js guards to one upload per day
   workflow_dispatch:           # lets you fire one by hand from the Actions tab
 
