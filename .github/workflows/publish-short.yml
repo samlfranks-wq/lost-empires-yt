@@ -58,16 +58,31 @@ jobs:
           set -o pipefail
           node queue.js --confirm | tee run.log
 
+      # Read-only: uploads nothing. Writes stats.json + stats_history.jsonl so the
+      # numbers are readable off this machine. --max-age 50 throttles it to roughly
+      # one collection per posting window.
+      - name: Collect analytics
+        continue-on-error: true          # analytics must never block publishing
+        shell: bash
+        env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          YT_CHANNEL_ID: ${{ secrets.YT_CHANNEL_ID }}
+        run: node analytics.js --limit 30 --max-age 50
+
       - name: Commit queue.json if something was uploaded
         run: |
-          if git diff --quiet queue.json; then
-            echo "Nothing due — queue.json unchanged."
+          for f in queue.json stats.json stats_history.jsonl; do
+            if [ -f "$f" ]; then git add "$f"; fi
+          done
+          if git diff --cached --quiet; then
+            echo "Nothing due and no new stats - nothing to commit."
             exit 0
           fi
           git config user.name  "lost-empires-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add queue.json
-          git commit -m "publish: $(date -u +%Y-%m-%dT%H:%MZ)"
+          git commit -m "publish/stats: $(date -u +%Y-%m-%dT%H:%MZ)"
 
           # This push is the thing that stops a double-post. The video is
           # already on the channel; the "posted" marker only exists in this

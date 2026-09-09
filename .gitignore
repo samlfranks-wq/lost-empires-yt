@@ -14,3 +14,6 @@ run.log
 # local helper that prints secrets to a console window
 show_secrets.cmd
 bronze_arm2.log
+
+# local sync helper, not part of the deploy
+sync_queue.cmd
