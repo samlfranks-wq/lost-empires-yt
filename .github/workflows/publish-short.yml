@@ -12,7 +12,6 @@ on:
   # and a missed day is picked up by the next window because the item stays due.
     - cron: '1,16,31,46 18-19 * * *'   # posts 18:00Z
                                     # and queue.js guards to one upload per day
-  workflow_dispatch:           # lets you fire one by hand from the Actions tab
 
 permissions:
   contents: write              # needed to commit the updated queue.json
@@ -24,6 +23,7 @@ concurrency:
 jobs:
   publish:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     steps:
       - uses: actions/checkout@v5
         with:
