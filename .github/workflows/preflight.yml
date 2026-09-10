@@ -8,7 +8,9 @@ name: Queue preflight
 # It uploads nothing and commits nothing.
 on:
   schedule:
-    - cron: '0 7 * * *'
+  # Weekly, not daily (2026-09-10). --days 7 already looks a full week ahead,
+  # so a Monday run covers every item before it is due, at a seventh of the cost.
+    - cron: '0 7 * * 1'   # Mondays 07:00Z
 
 permissions:
   contents: read

@@ -84,10 +84,21 @@ async function main() {
   console.log(`\n${pending.length} pending; checking every source URL:\n`);
 
   const broken = [];
+  // Only probe what is actually inside the horizon. Probing 20+ queued items in
+  // a tight loop got this rate-limited by catbox from GitHub runners (every URL
+  // came back 429 and the whole run went red), and an item three weeks out says
+  // nothing useful today anyway. The pause keeps the burst under their limit.
+  let first = true;
   for (const it of pending) {
-    const r = await probe(it.url);
     const soon = new Date(it.at) <= horizon;
-    const mark = r.ok ? 'ok  ' : soon ? 'FAIL' : 'warn';
+    if (!soon) {
+      console.log(`  --    ${it.at.slice(0, 10)}  beyond the ${DAYS}-day horizon`);
+      continue;
+    }
+    if (!first) await new Promise(r => setTimeout(r, 1500));
+    first = false;
+    const r = await probe(it.url);
+    const mark = r.ok ? 'ok  ' : 'FAIL';
     const title = buildSnippet({caption: it.caption, title: it.title, categoryId: env.YT_CATEGORY_ID}).title;
     console.log(`  ${mark}  ${it.at.slice(0, 10)}  ${r.note.padEnd(28)}  ${title.slice(0, 52)}`);
     if (!r.ok && soon) broken.push({at: it.at, note: r.note});

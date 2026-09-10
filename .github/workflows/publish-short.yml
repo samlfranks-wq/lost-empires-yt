@@ -10,7 +10,13 @@ on:
   # when that runs out GitHub silently stops scheduled workflows. One post a day
   # only needs a window: 8 attempts over two hours still absorbs dropped ticks,
   # and a missed day is picked up by the next window because the item stays due.
-    - cron: '1,16,31,46 18-19 * * *'   # posts 18:00Z
+  # Narrowed again 2026-09-10 after the quota ran out. GitHub bills a FULL MINUTE
+  # per job however short it is, so every extra tick in the window costs the same
+  # as a real post. Eight ticks a day x 3 repos was ~750 min/month for 3 posts.
+  # Two ticks is enough: the first absorbs a dropped or delayed cron, the second
+  # is the retry, and a genuinely missed day stays due so the next window sends
+  # it. Do NOT widen this back out, and do not re-add workflow_dispatch.
+    - cron: '8,38 18 * * *'   # posts 18:00Z
                                     # and queue.js guards to one upload per day
 
 permissions:
