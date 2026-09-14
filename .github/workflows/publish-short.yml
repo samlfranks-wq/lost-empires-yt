@@ -16,7 +16,14 @@ on:
   # Two ticks is enough: the first absorbs a dropped or delayed cron, the second
   # is the retry, and a genuinely missed day stays due so the next window sends
   # it. Do NOT widen this back out, and do not re-add workflow_dispatch.
-    - cron: '8,38 18 * * *'   # posts 18:00Z
+  # Widened again 2026-09-14. The repos are PUBLIC now, so Actions minutes are
+  # free and unlimited - the narrow 2-tick window existed only to control billing
+  # and that reason is gone. It was also costing punctuality: GitHub deprioritises
+  # scheduled runs, and the 17:04 tick was landing at 19:00-19:14Z, i.e. 20:00 BST
+  # instead of the 18:00 BST evening slot. More ticks = more chances one gets
+  # picked up promptly. queue.js still posts at most ONE due item per run and
+  # commits queue.json, so extra ticks cannot double-post.
+    - cron: '6,16,26,36,46,56 18-20 * * *'   # posts 18:00Z
                                     # and queue.js guards to one upload per day
 
 permissions:
