@@ -35,9 +35,19 @@ async function main() {
 
   const items = JSON.parse(readFileSync(QUEUE, 'utf8'));
   const now = new Date();
-  const i = items.findIndex((it) => !it.posted && new Date(it.at) <= now);
+  const confirm = process.argv.includes('--confirm');
 
-  if (i === -1) {
+  // Every due item, oldest first - not just the first one. A source URL that has
+  // gone 404/403 used to abort the whole run, and because the dead item stayed
+  // due it blocked every later day behind it too. Two days of Shorts were lost
+  // that way in Sept 2026. Now a broken item is stepped over and the next one
+  // goes up; it stays unposted so it publishes as soon as its URL is fixed.
+  const due = items
+    .map((it, idx) => ({it, idx}))
+    .filter(({it}) => !it.posted && new Date(it.at) <= now)
+    .sort((a, b) => new Date(a.it.at) - new Date(b.it.at));
+
+  if (!due.length) {
     const next = items.filter((it) => !it.posted).sort((a, b) => new Date(a.at) - new Date(b.at))[0];
     console.log(
       next
@@ -47,9 +57,8 @@ async function main() {
     return;
   }
 
-  // One upload per day. The runner fires every 15 minutes (GitHub drops
-  // scheduled ticks, so one hourly tick is not reliable). Without this, a
-  // missed day would drain the backlog four times an hour.
+  // One upload per day. The runner fires more than once per window (GitHub drops
+  // scheduled ticks), so without this a missed day would drain the backlog.
   const today = new Date().toISOString().slice(0, 10);
   const doneToday = items.find((it) => it.posted && it.posted.slice(0, 10) === today);
   if (doneToday) {
@@ -57,44 +66,74 @@ async function main() {
     return;
   }
 
-  const item = items[i];
   const env = loadEnv(['YT_CLIENT_ID', 'YT_CLIENT_SECRET', 'YT_REFRESH_TOKEN']);
-  const snippet = buildSnippet({caption: item.caption, title: item.title, categoryId: env.YT_CATEGORY_ID});
+  const skipped = [];
+  let uploaded = null;
 
-  console.log(`Due: ${item.at}`);
-  console.log(`  ${snippet.title}`);
+  for (const {it, idx} of due) {
+    const snippet = buildSnippet({caption: it.caption, title: it.title, categoryId: env.YT_CATEGORY_ID});
+    console.log(`Due: ${it.at}`);
+    console.log(`  ${snippet.title}`);
 
-  if (!process.argv.includes('--confirm')) {
-    console.log('\nDry run. Nothing uploaded. Re-run with --confirm.\n');
-    return;
+    if (!confirm) {
+      console.log('\nDry run. Nothing uploaded. Re-run with --confirm.\n');
+      return;
+    }
+
+    const token = await getAccessToken(env);
+    const src = /^https?:/i.test(it.url) ? it.url : join(HERE, it.url);
+
+    let bytes;
+    try {
+      bytes = await fetchVideo(src);
+    } catch (e) {
+      // Only a bad SOURCE is skipped. A failure after the bytes were fetched is
+      // left to throw, because an upload may have half-landed and retrying it
+      // blind is how you get a duplicate on the channel.
+      it.skips = (it.skips || 0) + 1;
+      it.lastError = `${new Date().toISOString().slice(0, 16)}Z ${e.message}`.slice(0, 300);
+      skipped.push(it);
+      console.log(`::warning::SKIPPED ${it.at} - source unfetchable: ${e.message}`);
+      console.log('  moving on to the next due item; this one stays queued.');
+      continue;
+    }
+
+    const video = await uploadVideo({
+      token,
+      bytes,
+      snippet,
+      status: {privacyStatus: env.YT_PRIVACY, selfDeclaredMadeForKids: false},
+    });
+
+    if (it.cover) {
+      const cover = /^https?:\/\//i.test(it.cover) ? it.cover : join(HERE, it.cover);
+      const t = await setThumbnail({token, videoId: video.id, url: cover});
+      if (!t.ok) console.log(`thumbnail skipped: ${t.skipped}`);
+    }
+
+    // Record before anything else so a crash after upload cannot double-post.
+    items[idx].posted = new Date().toISOString();
+    items[idx].videoId = video.id;
+    items[idx].privacy = video.status?.privacyStatus;
+    uploaded = video;
+    console.log(`uploaded https://youtube.com/watch?v=${video.id}  (${video.status?.privacyStatus})`);
+    break;
   }
 
-  const token = await getAccessToken(env);
-  const src = /^https?:/i.test(item.url) ? item.url : join(HERE, item.url);
-  const bytes = await fetchVideo(src);
-  const video = await uploadVideo({
-    token,
-    bytes,
-    snippet,
-    status: {privacyStatus: env.YT_PRIVACY, selfDeclaredMadeForKids: false},
-  });
+  // Persist skip counters even when nothing uploaded, so the workflow commits
+  // them and a repeatedly-skipped item is visible in the repo rather than only
+  // in a run log nobody reads.
+  if (uploaded || skipped.length) writeFileSync(QUEUE, JSON.stringify(items, null, 1));
 
-  if (item.cover) {
-    // A relative cover path is resolved against this directory, not the cwd,
-    // so the scheduled task works regardless of where it is invoked from.
-    const cover = /^https?:\/\//i.test(item.cover) ? item.cover : join(HERE, item.cover);
-    const t = await setThumbnail({token, videoId: video.id, url: cover});
-    if (!t.ok) console.log(`thumbnail skipped: ${t.skipped}`);
+  if (skipped.length) {
+    console.log(`\n${skipped.length} item(s) skipped for a broken source URL:`);
+    for (const it of skipped) console.log(`  ${it.at}  (skipped ${it.skips}x)  ${it.lastError}`);
+    console.log('Re-upload the asset and repoint queue.json; they publish on the next run.');
   }
-
-  // Record the outcome before doing anything else, so a crash after upload can
-  // never cause the same video to be posted twice on the next run.
-  items[i].posted = new Date().toISOString();
-  items[i].videoId = video.id;
-  items[i].privacy = video.status?.privacyStatus;
-  writeFileSync(QUEUE, JSON.stringify(items, null, 1));
-
-  console.log(`uploaded https://youtube.com/watch?v=${video.id}  (${video.status?.privacyStatus})`);
+  if (!uploaded && skipped.length) {
+    console.log('::error::Everything due has a broken source URL. Nothing was uploaded.');
+    process.exitCode = 1;
+  }
 }
 
 main().catch((e) => {
