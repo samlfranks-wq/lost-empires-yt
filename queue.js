@@ -63,6 +63,19 @@ async function main() {
   const doneToday = items.find((it) => it.posted && it.posted.slice(0, 10) === today);
   if (doneToday) {
     console.log(`Already uploaded today (${doneToday.at}). One per day - stopping.`);
+    // A no-op must not look like a healthy run. On 2026-09-14 this branch was
+    // reached because an item had been published by hand earlier that day; the
+    // run exited 0, GitHub showed a green tick, and nothing went out. Two items
+    // stayed overdue and the queue could never catch up, because it drains at
+    // exactly the rate it fills. Four days passed before anyone noticed.
+    //
+    // Being due but blocked is a real backlog, so say so loudly enough that the
+    // run list shows it.
+    const stale = due.length;
+    if (stale) {
+      console.log(`::warning::${stale} item(s) are due but BLOCKED by the one-per-day guard.`);
+      console.log(`::warning::Oldest: ${due[0].it.at}. The queue drains at the rate it fills, so this backlog is permanent until the dates are rebased.`);
+    }
     return;
   }
 

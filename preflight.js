@@ -26,9 +26,16 @@ const QUEUE = join(HERE, 'queue.json');
 const flag = process.argv.indexOf('--days');
 const DAYS = flag === -1 ? 7 : Number(process.argv[flag + 1]);
 
-// A ranged GET rather than HEAD: an expired object can still answer HEAD from
-// cache, and reading the first bytes proves the body is a file rather than an
-// error page. Content-Range gives the full size without pulling the video down.
+// A full GET, the way the uploader itself fetches the bytes.
+//
+// This used to send `Range: bytes=0-2047` and trust the 206. That is exactly
+// the false pass that let the Pompeii item through on 2026-09-14: a Higgsfield
+// object whose media_confirm never completed answers a range request with 206
+// and Content-Type video/mp4, while a full GET of the same url returns 403.
+// Preflight reported "all ok" and the publish step then failed on it.
+//
+// The body is cancelled as soon as the headers arrive, so this still does not
+// pull 25 MB down - it just asks the question the real client asks.
 export async function probe(url) {
   if (!/^https?:/i.test(url)) {
     const local = join(HERE, url);
@@ -38,23 +45,19 @@ export async function probe(url) {
   }
   let res;
   try {
-    res = await fetch(url, {headers: {Range: 'bytes=0-2047'}});
+    res = await fetch(url, {method: 'GET'});
   } catch (e) {
     return {ok: false, note: `unreachable: ${e.message}`};
   }
-  if (!res.ok) return {ok: false, note: `HTTP ${res.status}`};
+  if (!res.ok) {
+    res.body?.cancel();
+    return {ok: false, note: `HTTP ${res.status}`};
+  }
+  const type  = res.headers.get('content-type') || '';
+  const total = Number(res.headers.get('content-length')) || 0;
+  res.body?.cancel();
 
-  const bytes = (await res.arrayBuffer().catch(() => new ArrayBuffer(0))).byteLength;
-  if (!bytes) return {ok: false, note: 'empty body'};
-
-  // Size of the whole object: Content-Range when the Range was honoured, and
-  // Content-Length when the server ignored it and sent the lot. Without either,
-  // what was read is all there is to go on.
-  const total =
-    res.status === 206
-      ? Number((res.headers.get('content-range') || '').split('/')[1])
-      : Number(res.headers.get('content-length')) || bytes;
-
+  if (!/^(video|image)\//.test(type)) return {ok: false, note: `content-type ${type || 'unknown'}`};
   // fetchVideo() treats anything under 10 kB as a wrong URL, so flag it here
   // rather than letting the upload step discover it at publish time.
   if (total && total < 10_000) return {ok: false, note: `only ${total} bytes — wrong URL?`};
