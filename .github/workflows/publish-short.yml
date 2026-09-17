@@ -23,7 +23,25 @@ on:
   # instead of the 18:00 BST evening slot. More ticks = more chances one gets
   # picked up promptly. queue.js still posts at most ONE due item per run and
   # commits queue.json, so extra ticks cannot double-post.
-    - cron: '6,16,26,36,46,56 18-20 * * *'   # posts 18:00Z
+  # Rescheduled 2026-09-17 after measuring WHY posts were landing at 21:10 London
+  # instead of 18:00. On every run createdAt == startedAt, so nothing is queuing
+  # and waiting: GitHub DROPS the early ticks outright and only gets round to
+  # creating a run 2-3.5 h after the window opens (measured lag from the 17:02
+  # tick over 7 days: 1h57 2h10 2h26 2h56 3h05 3h07 3h49). Adding ticks inside
+  # the old window was useless - those are the ticks being dropped.
+  #
+  # So the window now OPENS THREE HOURS EARLY. A tick that fires before the item
+  # is due is a harmless no-op (queue.js only posts an item whose `at` has
+  # passed), but if GitHub applies its usual ~3 h lag to one of them, the run
+  # lands right on the slot. The tail then runs to 22:xx as catch-up insurance,
+  # because a genuinely dropped day is worse than a late one.
+  #
+  # Safe because queue.js posts at most ONE due item per run and commits
+  # queue.json, and `concurrency` serialises overlapping runs. Repos are PUBLIC
+  # so Actions minutes are free - the old narrow window existed only to control
+  # billing on the free tier and that reason is gone.
+    - cron: '6,26,46 15-17 * * *'   # early ticks: no-ops until 18:00Z, but a dropped-and-delayed one lands ON the slot
+    - cron: '6,16,26,36,46,56 18-23 * * *'   # the live window for 18:00Z + catch-up tail
                                     # and queue.js guards to one upload per day
 
 permissions:
