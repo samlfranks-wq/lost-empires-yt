@@ -1,86 +1,86 @@
 {
   "platform": "youtube",
-  "generated_at": "2026-09-23T21:26:04.426Z",
+  "generated_at": "2026-09-23T23:51:57.460Z",
   "channel": {
     "id": "UCQl8tsRC_XygaNg8Cbu6YWg",
     "title": "Lost Empires",
-    "subscribers": 89,
+    "subscribers": 88,
     "total_views": 40753,
     "video_count": 55
   },
   "analytics_28d": null,
   "totals": {
     "videos": 30,
-    "views": 26937,
-    "likes": 767,
-    "comments": 66,
+    "views": 27307,
+    "likes": 777,
+    "comments": 67,
     "like_rate": 2.85
   },
   "videos": [
     {
       "id": "FByU2HfW9Qk",
       "posted_at": "2026-09-23T18:56:24Z",
-      "age_h": 2.49,
+      "age_h": 4.93,
       "title": "How Was England Actually Formed? (Map Explained) #Shorts",
       "url": "https://youtu.be/FByU2HfW9Qk",
       "duration": "PT51S",
       "privacy": "public",
-      "views": 416,
-      "likes": 13,
-      "comments": 0
+      "views": 763,
+      "likes": 23,
+      "comments": 1
     },
     {
       "id": "59t6SYyrzg0",
       "posted_at": "2026-09-22T18:40:34Z",
-      "age_h": 26.76,
+      "age_h": 29.19,
       "title": "How Was Switzerland Actually Formed? (Map Explained) #Shorts",
       "url": "https://youtu.be/59t6SYyrzg0",
       "duration": "PT56S",
       "privacy": "public",
-      "views": 1253,
+      "views": 1264,
       "likes": 25,
       "comments": 0
     },
     {
       "id": "mxiMyPGMfvs",
       "posted_at": "2026-09-21T19:55:37Z",
-      "age_h": 49.51,
+      "age_h": 51.94,
       "title": "Why Doesn't Mexico Own California? (Map Explained) #Shorts",
       "url": "https://youtu.be/mxiMyPGMfvs",
       "duration": "PT1M1S",
       "privacy": "public",
-      "views": 2268,
+      "views": 2269,
       "likes": 53,
       "comments": 6
     },
     {
       "id": "jW3rJxpC3No",
       "posted_at": "2026-09-20T18:09:36Z",
-      "age_h": 75.27,
+      "age_h": 77.71,
       "title": "Why Couldn't Rome Conquer Scotland? (Map Explained) #Shorts",
       "url": "https://youtu.be/jW3rJxpC3No",
       "duration": "PT55S",
       "privacy": "public",
-      "views": 1819,
+      "views": 1823,
       "likes": 50,
       "comments": 3
     },
     {
       "id": "T8DFJ7jSFas",
       "posted_at": "2026-09-19T20:31:59Z",
-      "age_h": 96.9,
+      "age_h": 99.33,
       "title": "Why Didn't Anyone Stop Germany? (Map Explained) #Shorts",
       "url": "https://youtu.be/T8DFJ7jSFas",
       "duration": "PT1M4S",
       "privacy": "public",
-      "views": 1576,
+      "views": 1579,
       "likes": 45,
       "comments": 0
     },
     {
       "id": "3WahcbBso3E",
       "posted_at": "2026-09-18T18:14:05Z",
-      "age_h": 123.2,
+      "age_h": 125.63,
       "title": "What Happened to Muslim Spain? (Map Explained) #Shorts",
       "url": "https://youtu.be/3WahcbBso3E",
       "duration": "PT1M3S",
@@ -92,7 +92,7 @@
     {
       "id": "aSr9XfDkV2Y",
       "posted_at": "2026-09-17T22:50:12Z",
-      "age_h": 142.6,
+      "age_h": 145.03,
       "title": "Why Spain Could Never Keep Portugal (Map Explained) #Shorts",
       "url": "https://youtu.be/aSr9XfDkV2Y",
       "duration": "PT57S",
@@ -104,7 +104,7 @@
     {
       "id": "oY8-3-fK7QQ",
       "posted_at": "2026-09-16T21:05:30Z",
-      "age_h": 168.34,
+      "age_h": 170.77,
       "title": "Why Was the Mongol Empire 4x Bigger Than Rome? (Map Explained) #Shorts",
       "url": "https://youtu.be/oY8-3-fK7QQ",
       "duration": "PT1M1S",
@@ -116,7 +116,7 @@
     {
       "id": "_uIBtON98UQ",
       "posted_at": "2026-09-15T21:03:10Z",
-      "age_h": 192.38,
+      "age_h": 194.81,
       "title": "Why Did Rome Stop Expanding? (Map Explained) #Shorts",
       "url": "https://youtu.be/_uIBtON98UQ",
       "duration": "PT1M",
@@ -128,7 +128,7 @@
     {
       "id": "kpNal_q7048",
       "posted_at": "2026-09-14T13:53:51Z",
-      "age_h": 223.54,
+      "age_h": 225.97,
       "title": "Rich wives in Pompeii bought private nights with gladiators. Their husbands never knew #Shorts",
       "url": "https://youtu.be/kpNal_q7048",
       "duration": "PT28S",
@@ -140,7 +140,7 @@
     {
       "id": "OhSD9Mu54t8",
       "posted_at": "2026-09-11T19:25:37Z",
-      "age_h": 290.01,
+      "age_h": 292.44,
       "title": "Roman concrete gets stronger with age. Ours cracks in fifty years #Shorts",
       "url": "https://youtu.be/OhSD9Mu54t8",
       "duration": "PT23S",
@@ -152,7 +152,7 @@
     {
       "id": "ztCCkKWfJXw",
       "posted_at": "2026-09-11T00:29:36Z",
-      "age_h": 308.94,
+      "age_h": 311.37,
       "title": "Who Controlled This Land? 400 Years of Israel and Palestine #Shorts",
       "url": "https://youtu.be/ztCCkKWfJXw",
       "duration": "PT59S",
@@ -164,7 +164,7 @@
     {
       "id": "ZA24TjQqS38",
       "posted_at": "2026-09-10T20:47:06Z",
-      "age_h": 312.65,
+      "age_h": 315.08,
       "title": "How Napoleon Lost 590,000 Men Without Losing a Battle (Map Explained) #Shorts",
       "url": "https://youtu.be/ZA24TjQqS38",
       "duration": "PT59S",
@@ -176,7 +176,7 @@
     {
       "id": "LVs2VfewAys",
       "posted_at": "2026-09-08T18:01:29Z",
-      "age_h": 363.41,
+      "age_h": 365.84,
       "title": "He burned a city to kill his wife — then she opened her robe and he dropped the sword #Shorts",
       "url": "https://youtu.be/LVs2VfewAys",
       "duration": "PT31S",
@@ -188,7 +188,7 @@
     {
       "id": "7dLtflnc-Cs",
       "posted_at": "2026-09-07T18:01:21Z",
-      "age_h": 387.41,
+      "age_h": 389.84,
       "title": "If a Spartan husband couldn't give his wife a child, he brought her a younger man #Shorts",
       "url": "https://youtu.be/7dLtflnc-Cs",
       "duration": "PT32S",
@@ -200,7 +200,7 @@
     {
       "id": "53RikC1R49U",
       "posted_at": "2026-09-06T18:01:21Z",
-      "age_h": 411.41,
+      "age_h": 413.84,
       "title": "The Etruscans shared their wives at dinner — and the Greeks never got over it #Shorts",
       "url": "https://youtu.be/53RikC1R49U",
       "duration": "PT38S",
@@ -212,7 +212,7 @@
     {
       "id": "KDeragLl8Ic",
       "posted_at": "2026-09-05T15:44:07Z",
-      "age_h": 437.7,
+      "age_h": 440.13,
       "title": "Sparta Lost ONE Battle And Never Recovered #history #sparta #spartans #ancientgreek #ancientgreece",
       "url": "https://youtu.be/KDeragLl8Ic",
       "duration": "PT1M4S",
@@ -224,7 +224,7 @@
     {
       "id": "ajecL_r_eOk",
       "posted_at": "2026-09-04T18:01:20Z",
-      "age_h": 459.41,
+      "age_h": 461.84,
       "title": "A medieval bride was told to put leeches inside herself the night before her wedding #Shorts",
       "url": "https://youtu.be/ajecL_r_eOk",
       "duration": "PT48S",
@@ -236,19 +236,19 @@
     {
       "id": "tWPMTute5yI",
       "posted_at": "2026-09-04T11:56:25Z",
-      "age_h": 465.49,
+      "age_h": 467.93,
       "title": "Why Rome NEVER Conquered Germany (Map Explained) #history #rome #maphistory",
       "url": "https://youtu.be/tWPMTute5yI",
       "duration": "PT58S",
       "privacy": "public",
-      "views": 1986,
+      "views": 1990,
       "likes": 43,
       "comments": 1
     },
     {
       "id": "J1EVzp9Wd1I",
       "posted_at": "2026-09-04T09:20:02Z",
-      "age_h": 468.1,
+      "age_h": 470.53,
       "title": "Pompeii Was Rome's Playground (and the Graffiti Proves It) #pompeii #romehistory",
       "url": "https://youtu.be/J1EVzp9Wd1I",
       "duration": "PT49S",
@@ -260,7 +260,7 @@
     {
       "id": "rg8h_7DKvRo",
       "posted_at": "2026-09-03T18:09:32Z",
-      "age_h": 483.28,
+      "age_h": 485.71,
       "title": "The Vikings bathed weekly. Medieval England did not. 🛁⚔️#Vikings #History #MedievalHistory",
       "url": "https://youtu.be/rg8h_7DKvRo",
       "duration": "PT32S",
@@ -272,7 +272,7 @@
     {
       "id": "l6leY9szgos",
       "posted_at": "2026-09-03T18:01:28Z",
-      "age_h": 483.41,
+      "age_h": 485.84,
       "title": "A surgeon practised on 75 poor men before operating on the King of France #Shorts",
       "url": "https://youtu.be/l6leY9szgos",
       "duration": "PT44S",
@@ -284,7 +284,7 @@
     {
       "id": "v-lRLrNQgd4",
       "posted_at": "2026-09-03T14:47:01Z",
-      "age_h": 486.65,
+      "age_h": 489.08,
       "title": "Ancient Greece really said \"no trial, just vibes\" 🏛️😳#ancienthistory #ancientgreece",
       "url": "https://youtu.be/v-lRLrNQgd4",
       "duration": "PT35S",
@@ -296,7 +296,7 @@
     {
       "id": "ATEP6iEz498",
       "posted_at": "2026-09-03T14:43:09Z",
-      "age_h": 486.72,
+      "age_h": 489.15,
       "title": "1,700 years ago, Roman women had leg day too 💪🏛️ #rome #history",
       "url": "https://youtu.be/ATEP6iEz498",
       "duration": "PT31S",
@@ -308,7 +308,7 @@
     {
       "id": "hyHW8ThXaoQ",
       "posted_at": "2026-09-03T08:56:57Z",
-      "age_h": 492.49,
+      "age_h": 494.92,
       "title": "Could YOU survive Spartan school? 🛡️ #spartan #ancientgreece #greekhistory #history #historyfacts",
       "url": "https://youtu.be/hyHW8ThXaoQ",
       "duration": "PT29S",
@@ -320,7 +320,7 @@
     {
       "id": "KH1OZTG2udw",
       "posted_at": "2026-09-03T08:43:13Z",
-      "age_h": 492.71,
+      "age_h": 495.15,
       "title": "Gladiators were basically VEGAN 🥬⚔️ #romanempire #ancientrome #romanhistory #history #historyfacts",
       "url": "https://youtu.be/KH1OZTG2udw",
       "duration": "PT30S",
@@ -332,7 +332,7 @@
     {
       "id": "SdECNES9-Lg",
       "posted_at": "2026-09-02T18:44:50Z",
-      "age_h": 506.69,
+      "age_h": 509.12,
       "title": "Could you pass Roman Army Basic Training? #history #rome #gymbro #romanmilitary",
       "url": "https://youtu.be/SdECNES9-Lg",
       "duration": "PT29S",
@@ -344,7 +344,7 @@
     {
       "id": "b1d_MKW6Iso",
       "posted_at": "2026-09-02T18:01:40Z",
-      "age_h": 507.41,
+      "age_h": 509.84,
       "title": "The emperor's official historian secretly wrote a book calling him a demon #Shorts",
       "url": "https://youtu.be/b1d_MKW6Iso",
       "duration": "PT50S",
@@ -356,7 +356,7 @@
     {
       "id": "cA3b4Ta52qA",
       "posted_at": "2026-09-02T15:53:05Z",
-      "age_h": 509.55,
+      "age_h": 511.98,
       "title": "A crazy coincidence #history",
       "url": "https://youtu.be/cA3b4Ta52qA",
       "duration": "PT36S",
@@ -368,7 +368,7 @@
     {
       "id": "nKTGiVEqYP8",
       "posted_at": "2026-09-01T18:01:12Z",
-      "age_h": 531.41,
+      "age_h": 533.85,
       "title": "In 1726 a woman convinced the King's surgeon she was giving birth to rabbits #Shorts",
       "url": "https://youtu.be/nKTGiVEqYP8",
       "duration": "PT51S",
