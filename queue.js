@@ -60,8 +60,13 @@ async function main() {
 
   // One upload per day. The runner fires more than once per window (GitHub drops
   // scheduled ticks), so without this a missed day would drain the backlog.
+  // One per SCHEDULED day + >= 12 h spacing (2026-10-03) - the old UTC-calendar-day check let a
+  // post that ran after midnight UTC block the next day's slot for ever; see ig-publisher/queue.js.
   const today = new Date().toISOString().slice(0, 10);
-  const doneToday = items.find((it) => it.posted && it.posted.slice(0, 10) === today);
+  const posts = items.filter((it) => it.posted && typeof it.posted === 'string');
+  const lastPost = posts.map((it) => Date.parse(it.posted)).filter(Number.isFinite).sort((a, b) => b - a)[0];
+  const tooSoon = lastPost && Date.now() - lastPost < 12 * 3600 * 1000;
+  const doneToday = posts.find((it) => it.at.slice(0, 10) === today) || (tooSoon && posts.find((it) => Date.parse(it.posted) === lastPost));
   if (doneToday) {
     console.log(`Already uploaded today (${doneToday.at}). One per day - stopping.`);
     // A no-op must not look like a healthy run. On 2026-09-14 this branch was
