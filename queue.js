@@ -20,6 +20,7 @@
 //   }
 // ]
 
+import './net.js';   // retry transient network errors (run 37153961121 died on one)
 import {readFileSync, writeFileSync, existsSync} from 'node:fs';
 import {dirname, join} from 'node:path';
 import {fileURLToPath} from 'node:url';

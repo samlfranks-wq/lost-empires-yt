@@ -1,5 +1,6 @@
 // Verify credentials and show which channel we are pointed at.
 //   node check.js
+import './net.js';   // retry transient network errors (run 37153961121 died on one)
 import {loadEnv, getAccessToken, setEnvValue, Abort} from './lib.js';
 
 async function main() {

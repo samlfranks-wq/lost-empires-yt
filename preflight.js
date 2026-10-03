@@ -15,6 +15,7 @@
 //
 // Nothing is uploaded and nothing is written. This only looks.
 
+import './net.js';   // retry transient network errors (run 37153961121 died on one)
 import {readFileSync, existsSync} from 'node:fs';
 import {dirname, join} from 'node:path';
 import {fileURLToPath, pathToFileURL} from 'node:url';

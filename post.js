@@ -7,6 +7,7 @@
 // exactly what would be sent and uploads nothing — same safety rule as the
 // Instagram publisher.
 
+import './net.js';   // retry transient network errors (run 37153961121 died on one)
 import {readFileSync} from 'node:fs';
 import {loadEnv, getAccessToken, fetchVideo, uploadVideo, setThumbnail, buildSnippet, fail, Abort} from './lib.js';
 
