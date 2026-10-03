@@ -17,6 +17,7 @@
 // Quota cost per run: channels.list 1 + playlistItems.list 1 + videos.list 1
 // = ~3 units against a 10,000/day allowance. Negligible next to an upload.
 
+import './net.js';   // retry transient network errors (run 37153961121 died on one)
 import {readFileSync, writeFileSync, appendFileSync, existsSync, statSync} from 'node:fs';
 import {dirname, join} from 'node:path';
 import {fileURLToPath} from 'node:url';
