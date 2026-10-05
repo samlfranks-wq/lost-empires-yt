@@ -19,7 +19,7 @@ import './net.js';   // retry transient network errors (run 37153961121 died on 
 import {readFileSync, existsSync} from 'node:fs';
 import {dirname, join} from 'node:path';
 import {fileURLToPath, pathToFileURL} from 'node:url';
-import {loadEnv, getAccessToken, buildSnippet, fail, Abort} from './lib.js';
+import {loadEnv, getAccessToken, buildSnippet, fail, Abort, coverShape} from './lib.js';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const QUEUE = join(HERE, 'queue.json');
@@ -106,6 +106,12 @@ async function main() {
     const title = buildSnippet({caption: it.caption, title: it.title, categoryId: env.YT_CATEGORY_ID}).title;
     console.log(`  ${mark}  ${it.at.slice(0, 10)}  ${r.note.padEnd(28)}  ${title.slice(0, 52)}`);
     if (!r.ok && soon) broken.push({at: it.at, note: r.note});
+    // The thumbnail shape too: a portrait cover uploads "fine" and then shows up
+    // pillarboxed on YouTube, which Sam was fixing by hand after each post.
+    if (it.cover) {
+      const c = await coverShape(it.cover);
+      if (!c.ok) { console.log(`  FAIL  ${it.at.slice(0, 10)}  ${c.note}`); broken.push({at: it.at, note: c.note}); }
+    }
   }
 
   if (broken.length) {
