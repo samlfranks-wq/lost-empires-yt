@@ -165,16 +165,45 @@ export async function uploadVideo({token, bytes, snippet, status}) {
 // `url` may be an http(s) URL or a local file path. YouTube thumbnails are
 // 16:9 -- feeding it a 9:16 Instagram cover gets letterboxed, so prefer a
 // purpose-built 1280x720 image (see thumbs/).
-export async function setThumbnail({token, videoId, url}) {
+// Width/height straight out of the file header (PNG or JPEG) -- enough to tell
+// portrait from landscape without an image library.
+export function imageSize(b) {
+  if (b.length > 24 && b.readUInt32BE(0) === 0x89504e47) return {w: b.readUInt32BE(16), h: b.readUInt32BE(20)};
+  if (b.length > 4 && b[0] === 0xff && b[1] === 0xd8) {
+    let i = 2;
+    while (i + 9 < b.length) {
+      if (b[i] !== 0xff) { i++; continue; }
+      const m = b[i + 1];
+      if (m >= 0xc0 && m <= 0xcf && m !== 0xc4 && m !== 0xc8 && m !== 0xcc) return {h: b.readUInt16BE(i + 5), w: b.readUInt16BE(i + 7)};
+      i += 2 + b.readUInt16BE(i + 2);
+    }
+  }
+  return null;
+}
+
+// Load a cover (URL or path relative to this repo) and say whether YouTube will
+// show it properly. A 9:16 cover still gets HTTP 200 from thumbnails/set, then
+// YouTube pillarboxes it -- Sam was fixing those by hand after every post.
+export async function coverShape(url) {
   let bytes;
   if (/^https?:\/\//i.test(url)) {
     const res = await fetch(url);
-    if (!res.ok) return {skipped: `cover fetch ${res.status}`};
+    if (!res.ok) return {ok: false, note: `cover fetch ${res.status}`};
     bytes = Buffer.from(await res.arrayBuffer());
   } else {
-    if (!existsSync(url)) return {skipped: `cover file not found: ${url}`};
-    bytes = readFileSync(url);
+    const p = existsSync(url) ? url : join(HERE, url);
+    if (!existsSync(p)) return {ok: false, note: `cover file not found: ${url}`};
+    bytes = readFileSync(p);
   }
+  const dim = imageSize(bytes);
+  if (dim && dim.w / dim.h < 1.2) return {ok: false, bytes, note: `cover ${dim.w}x${dim.h} is portrait - needs 16:9 (1280x720)`};
+  return {ok: true, bytes, note: dim ? `cover ${dim.w}x${dim.h}` : 'cover ok'};
+}
+
+export async function setThumbnail({token, videoId, url}) {
+  const shape = await coverShape(url);
+  if (!shape.ok) return {skipped: `${shape.note}. Make one with map-pipeline/make_thumb2.py and put it in thumbs/.`};
+  const bytes = shape.bytes;
   const up = await fetch(
     `https://www.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=${videoId}`,
     {
