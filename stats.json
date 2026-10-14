@@ -1,38 +1,98 @@
 {
   "platform": "youtube",
-  "generated_at": "2026-10-14T19:15:01.822Z",
+  "generated_at": "2026-10-14T21:34:23.628Z",
   "channel": {
     "id": "UCQl8tsRC_XygaNg8Cbu6YWg",
     "title": "Lost Empires",
-    "subscribers": 135,
+    "subscribers": 137,
     "total_views": 73718,
-    "video_count": 79
+    "video_count": 84
   },
   "analytics_28d": null,
   "totals": {
     "videos": 30,
-    "views": 40482,
-    "likes": 782,
-    "comments": 53,
-    "like_rate": 1.93
+    "views": 32698,
+    "likes": 573,
+    "comments": 37,
+    "like_rate": 1.75
   },
   "videos": [
     {
+      "id": "71z4ocZu8rU",
+      "posted_at": "2026-10-14T19:24:01Z",
+      "age_h": 2.17,
+      "title": "Israel and Palestine: 100 Years of Borders (Map) #Shorts",
+      "url": "https://youtu.be/71z4ocZu8rU",
+      "duration": "PT1M19S",
+      "privacy": "public",
+      "views": 380,
+      "likes": 1,
+      "comments": 0
+    },
+    {
+      "id": "OfVRdKOnlK4",
+      "posted_at": "2026-10-14T19:23:55Z",
+      "age_h": 2.17,
+      "title": "How Asian Are Finnish People? (DNA Map) #Shorts",
+      "url": "https://youtu.be/OfVRdKOnlK4",
+      "duration": "PT1M6S",
+      "privacy": "public",
+      "views": 313,
+      "likes": 3,
+      "comments": 0
+    },
+    {
+      "id": "tMWYwXVBkLU",
+      "posted_at": "2026-10-14T19:23:41Z",
+      "age_h": 2.18,
+      "title": "Why Does Belgium Exist? Britain Invented It (Map) #Shorts",
+      "url": "https://youtu.be/tMWYwXVBkLU",
+      "duration": "PT55S",
+      "privacy": "public",
+      "views": 461,
+      "likes": 11,
+      "comments": 0
+    },
+    {
+      "id": "DyfMQhfiX-4",
+      "posted_at": "2026-10-14T19:23:37Z",
+      "age_h": 2.18,
+      "title": "Are the English Really Anglo-Saxon? (DNA Map) #Shorts",
+      "url": "https://youtu.be/DyfMQhfiX-4",
+      "duration": "PT1M9S",
+      "privacy": "public",
+      "views": 289,
+      "likes": 3,
+      "comments": 0
+    },
+    {
+      "id": "4nwbdDTGnLk",
+      "posted_at": "2026-10-14T19:15:15Z",
+      "age_h": 2.32,
+      "title": "Why Does Wales Mean 'Foreigners'? (Map Explained) #Shorts",
+      "url": "https://youtu.be/4nwbdDTGnLk",
+      "duration": "PT53S",
+      "privacy": "public",
+      "views": 77,
+      "likes": 4,
+      "comments": 1
+    },
+    {
       "id": "r_YaImaZYMM",
       "posted_at": "2026-10-13T20:34:30Z",
-      "age_h": 22.68,
+      "age_h": 25,
       "title": "Why Is France Named After a German Tribe? (Map Explained) #Shorts",
       "url": "https://youtu.be/r_YaImaZYMM",
       "duration": "PT55S",
       "privacy": "public",
-      "views": 1046,
+      "views": 1068,
       "likes": 23,
       "comments": 0
     },
     {
       "id": "P2qV26FDtz4",
       "posted_at": "2026-10-12T22:27:30Z",
-      "age_h": 44.79,
+      "age_h": 47.11,
       "title": "Why Is Scotland Named After the Irish? (Map Explained) #Shorts",
       "url": "https://youtu.be/P2qV26FDtz4",
       "duration": "PT59S",
@@ -44,31 +104,31 @@
     {
       "id": "OAeMbvVUHDs",
       "posted_at": "2026-10-11T19:26:22Z",
-      "age_h": 71.81,
+      "age_h": 74.13,
       "title": "Why Thailand Was Never Colonised (Map Explained) #Shorts",
       "url": "https://youtu.be/OAeMbvVUHDs",
       "duration": "PT58S",
       "privacy": "public",
-      "views": 1466,
+      "views": 1469,
       "likes": 17,
       "comments": 1
     },
     {
       "id": "W79U-0CbOgA",
       "posted_at": "2026-10-10T19:12:00Z",
-      "age_h": 96.05,
+      "age_h": 98.37,
       "title": "Where Did the English Really Come From? (Map Explained) #Shorts",
       "url": "https://youtu.be/W79U-0CbOgA",
       "duration": "PT1M3S",
       "privacy": "public",
-      "views": 1644,
+      "views": 1645,
       "likes": 35,
       "comments": 8
     },
     {
       "id": "7acf4ueV2Es",
       "posted_at": "2026-10-09T20:03:23Z",
-      "age_h": 119.19,
+      "age_h": 121.52,
       "title": "Why Does Belgium Exist? (Map Explained) #Shorts",
       "url": "https://youtu.be/7acf4ueV2Es",
       "duration": "PT56S",
@@ -80,7 +140,7 @@
     {
       "id": "EKl0W8VAWHk",
       "posted_at": "2026-10-08T20:54:12Z",
-      "age_h": 142.35,
+      "age_h": 144.67,
       "title": "How Italy Became One Country (Map Explained) #Shorts",
       "url": "https://youtu.be/EKl0W8VAWHk",
       "duration": "PT47S",
@@ -92,7 +152,7 @@
     {
       "id": "2GJqPzcq-Z8",
       "posted_at": "2026-10-07T20:31:38Z",
-      "age_h": 166.72,
+      "age_h": 169.05,
       "title": "How Korea Was Split in 30 Minutes (Map Explained) #Shorts",
       "url": "https://youtu.be/2GJqPzcq-Z8",
       "duration": "PT53S",
@@ -104,7 +164,7 @@
     {
       "id": "gsjNR7bpkOc",
       "posted_at": "2026-10-06T20:07:10Z",
-      "age_h": 191.13,
+      "age_h": 193.45,
       "title": "Why Did the Anglo-Saxons Migrate to Britain? (Map Explained) #Shorts",
       "url": "https://youtu.be/gsjNR7bpkOc",
       "duration": "PT1M17S",
@@ -116,7 +176,7 @@
     {
       "id": "z8m--AVqtos",
       "posted_at": "2026-10-06T18:00:34Z",
-      "age_h": 193.24,
+      "age_h": 195.56,
       "title": "16 Countries That Shouldn't Exist (Explained on Maps)",
       "url": "https://youtu.be/z8m--AVqtos",
       "duration": "PT12M8S",
@@ -128,7 +188,7 @@
     {
       "id": "FIGaF-B4xY4",
       "posted_at": "2026-10-05T20:53:16Z",
-      "age_h": 214.36,
+      "age_h": 216.69,
       "title": "The Reconquista: Every Year from 711 to 1492 (Map Explained) #Shorts",
       "url": "https://youtu.be/FIGaF-B4xY4",
       "duration": "PT1M1S",
@@ -140,7 +200,7 @@
     {
       "id": "nCuayrPRoT8",
       "posted_at": "2026-10-04T18:34:57Z",
-      "age_h": 240.67,
+      "age_h": 242.99,
       "title": "Why Didn't Rome Conquer Germania? (Map Explained) #Shorts",
       "url": "https://youtu.be/nCuayrPRoT8",
       "duration": "PT1M18S",
@@ -152,7 +212,7 @@
     {
       "id": "IX_y8-h_b0o",
       "posted_at": "2026-10-03T18:37:06Z",
-      "age_h": 264.63,
+      "age_h": 266.95,
       "title": "Why Did Sparta Collapse? (Map Explained) #Shorts",
       "url": "https://youtu.be/IX_y8-h_b0o",
       "duration": "PT1M18S",
@@ -164,7 +224,7 @@
     {
       "id": "4pNCG4xV05w",
       "posted_at": "2026-10-02T19:50:48Z",
-      "age_h": 287.4,
+      "age_h": 289.73,
       "title": "How Hannibal Crossed the Alps and Never Took Rome (Map Explained) #Shorts",
       "url": "https://youtu.be/4pNCG4xV05w",
       "duration": "PT1M22S",
@@ -176,7 +236,7 @@
     {
       "id": "tNVvlqBiOTI",
       "posted_at": "2026-10-01T20:15:20Z",
-      "age_h": 310.99,
+      "age_h": 313.32,
       "title": "How Alexander the Great Conquered the World in 10 Years (Map Explained) #Shorts",
       "url": "https://youtu.be/tNVvlqBiOTI",
       "duration": "PT1M12S",
@@ -188,7 +248,7 @@
     {
       "id": "0lWTIIRYqbc",
       "posted_at": "2026-10-01T19:19:11Z",
-      "age_h": 311.93,
+      "age_h": 314.25,
       "title": "Why Did Yugoslavia Break Into 7 Countries? (Map Explained) #Shorts",
       "url": "https://youtu.be/0lWTIIRYqbc",
       "duration": "PT1M2S",
@@ -200,19 +260,19 @@
     {
       "id": "QMdVuEjw9lw",
       "posted_at": "2026-10-01T19:19:04Z",
-      "age_h": 311.93,
+      "age_h": 314.26,
       "title": "Why Did the Crusades Fail? (Map Explained) #Shorts",
       "url": "https://youtu.be/QMdVuEjw9lw",
       "duration": "PT57S",
       "privacy": "public",
-      "views": 1317,
+      "views": 1318,
       "likes": 21,
       "comments": 2
     },
     {
       "id": "aqKx0EA5XYw",
       "posted_at": "2026-10-01T19:18:27Z",
-      "age_h": 311.94,
+      "age_h": 314.27,
       "title": "Why Did the Spanish Empire Collapse So Fast? (Map Explained) #Shorts",
       "url": "https://youtu.be/aqKx0EA5XYw",
       "duration": "PT1M1S",
@@ -224,7 +284,7 @@
     {
       "id": "6nBsnzRVp_Y",
       "posted_at": "2026-09-30T19:54:46Z",
-      "age_h": 335.34,
+      "age_h": 337.66,
       "title": "How Did Poland Disappear for 123 Years? (Map Explained) #Shorts",
       "url": "https://youtu.be/6nBsnzRVp_Y",
       "duration": "PT1M3S",
@@ -236,7 +296,7 @@
     {
       "id": "GJH12TD-wR0",
       "posted_at": "2026-09-29T19:54:01Z",
-      "age_h": 359.35,
+      "age_h": 361.67,
       "title": "Why Does Belgium Exist? (Map Explained) #Shorts",
       "url": "https://youtu.be/GJH12TD-wR0",
       "duration": "PT1M2S",
@@ -248,7 +308,7 @@
     {
       "id": "TmYBMa1SQAU",
       "posted_at": "2026-09-28T21:09:58Z",
-      "age_h": 382.08,
+      "age_h": 384.41,
       "title": "How Did the Ottoman Empire Lose Everything? (Map Explained) #Shorts",
       "url": "https://youtu.be/TmYBMa1SQAU",
       "duration": "PT1M2S",
@@ -260,7 +320,7 @@
     {
       "id": "kY45KetOrog",
       "posted_at": "2026-09-28T10:22:17Z",
-      "age_h": 392.88,
+      "age_h": 395.2,
       "title": "Why Do 2 in 3 Canadians Live Near the US Border? (Map Explained) #Shorts",
       "url": "https://youtu.be/kY45KetOrog",
       "duration": "PT58S",
@@ -272,19 +332,19 @@
     {
       "id": "dV2nk6IjG9w",
       "posted_at": "2026-09-27T18:57:15Z",
-      "age_h": 408.3,
+      "age_h": 410.62,
       "title": "How Did the Celts Lose Europe? (Map Explained) #Shorts",
       "url": "https://youtu.be/dV2nk6IjG9w",
       "duration": "PT58S",
       "privacy": "public",
-      "views": 1127,
+      "views": 1128,
       "likes": 26,
       "comments": 2
     },
     {
       "id": "QgTTQADbZBU",
       "posted_at": "2026-09-26T18:27:28Z",
-      "age_h": 432.79,
+      "age_h": 435.12,
       "title": "Who Controlled This Land? 400 Years of Israel and Palestine (Map Explained) #Shorts",
       "url": "https://youtu.be/QgTTQADbZBU",
       "duration": "PT59S",
@@ -296,7 +356,7 @@
     {
       "id": "IkHoEG9kYsg",
       "posted_at": "2026-09-25T19:11:57Z",
-      "age_h": 456.05,
+      "age_h": 458.37,
       "title": "How Did Spain Become One Country? (Map Explained) #Shorts",
       "url": "https://youtu.be/IkHoEG9kYsg",
       "duration": "PT57S",
@@ -308,7 +368,7 @@
     {
       "id": "7K-yFtQ852Y",
       "posted_at": "2026-09-24T18:56:36Z",
-      "age_h": 480.31,
+      "age_h": 482.63,
       "title": "How Did the US Get So Big? (Map Explained) #Shorts",
       "url": "https://youtu.be/7K-yFtQ852Y",
       "duration": "PT58S",
@@ -316,66 +376,6 @@
       "views": 2565,
       "likes": 46,
       "comments": 1
-    },
-    {
-      "id": "FByU2HfW9Qk",
-      "posted_at": "2026-09-23T18:56:24Z",
-      "age_h": 504.31,
-      "title": "How Was England Actually Formed? (Map Explained) #Shorts",
-      "url": "https://youtu.be/FByU2HfW9Qk",
-      "duration": "PT51S",
-      "privacy": "public",
-      "views": 1680,
-      "likes": 38,
-      "comments": 4
-    },
-    {
-      "id": "59t6SYyrzg0",
-      "posted_at": "2026-09-22T18:40:34Z",
-      "age_h": 528.57,
-      "title": "How Was Switzerland Actually Formed? (Map Explained) #Shorts",
-      "url": "https://youtu.be/59t6SYyrzg0",
-      "duration": "PT56S",
-      "privacy": "public",
-      "views": 1579,
-      "likes": 39,
-      "comments": 0
-    },
-    {
-      "id": "mxiMyPGMfvs",
-      "posted_at": "2026-09-21T19:55:37Z",
-      "age_h": 551.32,
-      "title": "Why Doesn't Mexico Own California? (Map Explained) #Shorts",
-      "url": "https://youtu.be/mxiMyPGMfvs",
-      "duration": "PT1M1S",
-      "privacy": "public",
-      "views": 2560,
-      "likes": 60,
-      "comments": 10
-    },
-    {
-      "id": "jW3rJxpC3No",
-      "posted_at": "2026-09-20T18:09:36Z",
-      "age_h": 577.09,
-      "title": "Why Couldn't Rome Conquer Scotland? (Map Explained) #Shorts",
-      "url": "https://youtu.be/jW3rJxpC3No",
-      "duration": "PT55S",
-      "privacy": "public",
-      "views": 1909,
-      "likes": 50,
-      "comments": 3
-    },
-    {
-      "id": "T8DFJ7jSFas",
-      "posted_at": "2026-09-19T20:31:59Z",
-      "age_h": 598.72,
-      "title": "Why Didn't Anyone Stop Germany? (Map Explained) #Shorts",
-      "url": "https://youtu.be/T8DFJ7jSFas",
-      "duration": "PT1M4S",
-      "privacy": "public",
-      "views": 1604,
-      "likes": 44,
-      "comments": 0
     }
   ]
 }
