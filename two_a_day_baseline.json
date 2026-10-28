@@ -1,0 +1,90 @@
+{
+ "captured_at": "2026-10-28T09:29:21+00:00",
+ "purpose": "baseline for the two-a-day Shorts test (28 Oct - 3 Nov): one-a-day Shorts, views at capture",
+ "rows": [
+  {
+   "videoId": "iEK6E69tVUg",
+   "posted": "2026-10-15T18:58:49.050Z",
+   "age_h": 302.5,
+   "views": 15,
+   "note": "reformation - map pipeline, cr"
+  },
+  {
+   "videoId": "fVYHdZDuGck",
+   "posted": "2026-10-16T18:42:52.693Z",
+   "age_h": 278.8,
+   "views": 2000,
+   "note": "meiji - map pipeline, crisp-li"
+  },
+  {
+   "videoId": "lze4gJ_6Lo8",
+   "posted": "2026-10-17T20:29:16.953Z",
+   "age_h": 253.0,
+   "views": 1000,
+   "note": "luxembourg - map pipeline, HoM"
+  },
+  {
+   "videoId": "fB7MZFJtsxQ",
+   "posted": "2026-10-18T20:31:59.016Z",
+   "age_h": 229.0,
+   "views": 1100,
+   "note": "britain24 - map pipeline, HoM "
+  },
+  {
+   "videoId": "0CBkLLVqF_k",
+   "posted": "2026-10-19T20:29:00.479Z",
+   "age_h": 205.0,
+   "views": 1300,
+   "note": "romania - WW2 switch sides, fx"
+  },
+  {
+   "videoId": "84AQStZhu5Y",
+   "posted": "2026-10-20T19:05:37.299Z",
+   "age_h": 182.4,
+   "views": 1100,
+   "note": "czech - fx v4 (Cliopatria real"
+  },
+  {
+   "videoId": "PvTP0keLnVs",
+   "posted": "2026-10-22T19:06:12.093Z",
+   "age_h": 134.4,
+   "views": 1100,
+   "note": "sweden - fx v4 (Cliopatria rea"
+  },
+  {
+   "videoId": "QyL3ShOabdc",
+   "posted": "2026-10-23T18:59:19.391Z",
+   "age_h": 110.5,
+   "views": 1200,
+   "note": "siberia - fx v4 (Cliopatria re"
+  },
+  {
+   "videoId": "vZZPZsYs6o4",
+   "posted": "2026-10-24T18:00:16.340Z",
+   "age_h": 87.5,
+   "views": 1600,
+   "note": "portugal_emp - fx v4 (Cliopatr"
+  },
+  {
+   "videoId": "_dznE6LBbgk",
+   "posted": "2026-10-25T18:17:36.438Z",
+   "age_h": 63.2,
+   "views": 1100,
+   "note": "baghdad - fx v4 (Cliopatria re"
+  },
+  {
+   "videoId": "SKK5WI2C5KQ",
+   "posted": "2026-10-26T20:22:40.998Z",
+   "age_h": 37.1,
+   "views": 888,
+   "note": "uruguay - country-origin (Belg"
+  },
+  {
+   "videoId": "7vTLtFU_oG4",
+   "posted": "2026-10-27T19:58:03.586Z",
+   "age_h": 13.5,
+   "views": 237,
+   "note": "panama - country-origin (Belgi"
+  }
+ ]
+}
