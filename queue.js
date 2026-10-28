@@ -65,10 +65,18 @@ async function main() {
   const today = new Date().toISOString().slice(0, 10);
   const posts = items.filter((it) => it.posted && typeof it.posted === 'string');
   const lastPost = posts.map((it) => Date.parse(it.posted)).filter(Number.isFinite).sort((a, b) => b - a)[0];
-  const tooSoon = lastPost && Date.now() - lastPost < 12 * 3600 * 1000;
-  const doneToday = posts.find((it) => it.at.slice(0, 10) === today) || (tooSoon && posts.find((it) => Date.parse(it.posted) === lastPost));
+  // Two-a-day TEST (Sam, 2026-10-28): MAX_PER_DAY=2 + MIN_GAP_H=4 allow a second upload in a UTC day, only until
+  // TWO_A_DAY_UNTIL (inclusive, YYYY-MM-DD); after that date the original one-per-day rule applies again by itself.
+  const twoADay = Number(process.env.MAX_PER_DAY || 1) >= 2 && (!process.env.TWO_A_DAY_UNTIL || today <= process.env.TWO_A_DAY_UNTIL);
+  const gapH = twoADay ? Number(process.env.MIN_GAP_H || 4) : 12;
+  const tooSoon = lastPost && Date.now() - lastPost < gapH * 3600 * 1000;
+  const postedToday = posts.filter((it) => it.posted.slice(0, 10) === today).length;
+  const doneToday = twoADay
+    ? (postedToday >= 2 || tooSoon ? (posts.find((it) => Date.parse(it.posted) === lastPost) || {at: today}) : null)
+    : posts.find((it) => it.at.slice(0, 10) === today) || (tooSoon && posts.find((it) => Date.parse(it.posted) === lastPost));
+  if (twoADay) console.log(`Two-a-day test: ${postedToday} posted today (UTC), min gap ${gapH} h.`);
   if (doneToday) {
-    console.log(`Already uploaded today (${doneToday.at}). One per day - stopping.`);
+    console.log(`Already uploaded today (${doneToday.at}). ${twoADay ? 'Two-a-day cap or 4 h gap' : 'One per day'} - stopping.`);
     // A no-op must not look like a healthy run. On 2026-09-14 this branch was
     // reached because an item had been published by hand earlier that day; the
     // run exited 0, GitHub showed a green tick, and nothing went out. Two items
