@@ -40,6 +40,7 @@ on:
   # queue.json, and `concurrency` serialises overlapping runs. Repos are PUBLIC
   # so Actions minutes are free - the old narrow window existed only to control
   # billing on the free tier and that reason is gone.
+    - cron: '6,26,46 9-14 * * *'    # two-a-day TEST (28 Oct-3 Nov): midday 12:00Z slot, opens early for GitHub's ~3 h lag
     - cron: '6,26,46 15-17 * * *'   # early ticks: no-ops until 18:00Z, but a dropped-and-delayed one lands ON the slot
     - cron: '6,16,26,36,46,56 18-23 * * *'   # the live window for 18:00Z + catch-up tail
                                     # and queue.js guards to one upload per day
@@ -84,6 +85,9 @@ jobs:
           YT_CHANNEL_ID: ${{ secrets.YT_CHANNEL_ID }}
           YT_CATEGORY_ID: ${{ secrets.YT_CATEGORY_ID }}
           YT_PRIVACY: ${{ secrets.YT_PRIVACY }}
+          MAX_PER_DAY: '2'                # two-a-day TEST (Sam, 2026-10-28); queue.js reverts to one a day after TWO_A_DAY_UNTIL
+          MIN_GAP_H: '4'
+          TWO_A_DAY_UNTIL: '2026-11-03'
         shell: bash
         run: |
           set -o pipefail
