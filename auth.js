@@ -15,6 +15,7 @@ const SCOPE = [
   'https://www.googleapis.com/auth/youtube.upload',
   'https://www.googleapis.com/auth/youtube.readonly',
   'https://www.googleapis.com/auth/youtube.force-ssl',
+  'https://www.googleapis.com/auth/yt-analytics.readonly',   // retention_curves.mjs
 ].join(' ');
 
 async function main() {

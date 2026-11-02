@@ -3,7 +3,9 @@
 // npm install is needed. Mirrors ig-publisher/lib.js deliberately: same env
 // handling, same failure style, so the two publishers behave alike.
 
-import {readFileSync, writeFileSync, existsSync} from 'node:fs';
+import {readFileSync, writeFileSync, existsSync, mkdtempSync, rmSync} from 'node:fs';
+import {execFileSync, execSync} from 'node:child_process';
+import {tmpdir} from 'node:os';
 import {dirname, join} from 'node:path';
 import {fileURLToPath} from 'node:url';
 
@@ -162,9 +164,10 @@ export async function uploadVideo({token, bytes, snippet, status}) {
 // Set a custom thumbnail. Shorts show a frame from the video in the Shorts
 // feed, but the custom thumbnail is what appears on the channel grid and in
 // search — so it is still worth setting.
-// `url` may be an http(s) URL or a local file path. YouTube thumbnails are
-// 16:9 -- feeding it a 9:16 Instagram cover gets letterboxed, so prefer a
-// purpose-built 1280x720 image (see thumbs/).
+// `url` may be an http(s) URL or a local file path.
+// Sam, 2026-11-02: Shorts get the 9:16 cover, same as Instagram; only landscape
+// long-form videos keep a 16:9 thumbnail (landscapeOnly). Applies to new uploads;
+// nothing here touches a thumbnail already on the channel.
 // Width/height straight out of the file header (PNG or JPEG) -- enough to tell
 // portrait from landscape without an image library.
 export function imageSize(b) {
@@ -181,10 +184,8 @@ export function imageSize(b) {
   return null;
 }
 
-// Load a cover (URL or path relative to this repo) and say whether YouTube will
-// show it properly. A 9:16 cover still gets HTTP 200 from thumbnails/set, then
-// YouTube pillarboxes it -- Sam was fixing those by hand after every post.
-export async function coverShape(url) {
+// Load a cover (URL or path relative to this repo) and report its shape.
+export async function coverShape(url, {landscapeOnly = false} = {}) {
   let bytes;
   if (/^https?:\/\//i.test(url)) {
     const res = await fetch(url);
@@ -196,14 +197,58 @@ export async function coverShape(url) {
     bytes = readFileSync(p);
   }
   const dim = imageSize(bytes);
-  if (dim && dim.w / dim.h < 1.2) return {ok: false, bytes, note: `cover ${dim.w}x${dim.h} is portrait - needs 16:9 (1280x720)`};
-  return {ok: true, bytes, note: dim ? `cover ${dim.w}x${dim.h}` : 'cover ok'};
+  const portrait = !!dim && dim.h > dim.w;
+  if (landscapeOnly && dim && dim.w / dim.h < 1.2) return {ok: false, bytes, portrait, note: `cover ${dim.w}x${dim.h} is portrait - a landscape video needs 16:9 (1280x720)`};
+  return {ok: true, bytes, portrait, note: dim ? `cover ${dim.w}x${dim.h}` : 'cover ok'};
 }
 
-export async function setThumbnail({token, videoId, url}) {
-  const shape = await coverShape(url);
+// Frame 0 of a Short IS its cover: every build bakes the card in there, so this
+// needs no per-item setup. ffmpeg is installed on the runner only when an upload needs it.
+function ensureFfmpeg() {
+  try { execFileSync('ffmpeg', ['-version'], {stdio: 'ignore'}); return; } catch { /* not installed */ }
+  if (!process.env.CI) throw new Error('ffmpeg not found');
+  execSync('sudo apt-get install -y -qq ffmpeg', {stdio: 'ignore', timeout: 150000});
+}
+export function firstFrameJpeg(videoBytes) {
+  ensureFfmpeg();
+  const dir = mkdtempSync(join(tmpdir(), 'thumb-'));
+  const src = join(dir, 'v.mp4');
+  writeFileSync(src, videoBytes);
+  // thumbnails/set rejects anything over 2 MB
+  for (const q of [2, 5, 9, 15]) {
+    const out = join(dir, `f${q}.jpg`);
+    execFileSync('ffmpeg', ['-y', '-v', 'error', '-i', src, '-frames:v', '1', '-q:v', String(q), out]);
+    const jpg = readFileSync(out);
+    if (jpg.length < 2000000) { rmSync(dir, {recursive: true, force: true}); return jpg; }
+  }
+  rmSync(dir, {recursive: true, force: true});
+  throw new Error('first frame over 2 MB at every quality');
+}
+
+// The one path every Short takes. A portrait `cover` wins; otherwise frame 0 of the
+// video; a landscape `cover` is only the last resort if ffmpeg itself fails.
+export async function setShortThumbnail({token, videoId, videoBytes, cover}) {
+  let bytes, source;
+  if (cover) {
+    const c = await coverShape(cover);
+    if (c.ok && c.portrait) { bytes = c.bytes; source = `cover (${c.note})`; }
+  }
+  if (!bytes) {
+    try { bytes = firstFrameJpeg(videoBytes); source = 'frame 0'; }
+    catch (e) { console.log(`::warning::frame 0 failed: ${e.message}`); }
+  }
+  if (!bytes && cover) return {...await setThumbnail({token, videoId, url: cover}), source: 'landscape cover (fallback)'};
+  if (!bytes) return {skipped: 'no cover and no frame 0'};
+  return {...await putThumbnail({token, videoId, bytes}), source};
+}
+
+export async function setThumbnail({token, videoId, url, landscapeOnly = false}) {
+  const shape = await coverShape(url, {landscapeOnly});
   if (!shape.ok) return {skipped: `${shape.note}. Make one with map-pipeline/make_thumb2.py and put it in thumbs/.`};
-  const bytes = shape.bytes;
+  return putThumbnail({token, videoId, bytes: shape.bytes});
+}
+
+async function putThumbnail({token, videoId, bytes}) {
   const up = await fetch(
     `https://www.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=${videoId}`,
     {

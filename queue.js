@@ -25,7 +25,7 @@ import {readFileSync, writeFileSync, existsSync} from 'node:fs';
 import {dirname, join} from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {
-  loadEnv, getAccessToken, fetchVideo, uploadVideo, setThumbnail, buildSnippet, fail, Abort,
+  loadEnv, getAccessToken, fetchVideo, uploadVideo, setShortThumbnail, buildSnippet, fail, Abort,
 } from './lib.js';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
@@ -132,11 +132,9 @@ async function main() {
       status: {privacyStatus: env.YT_PRIVACY, selfDeclaredMadeForKids: false},
     });
 
-    if (it.cover) {
-      const cover = /^https?:\/\//i.test(it.cover) ? it.cover : join(HERE, it.cover);
-      const t = await setThumbnail({token, videoId: video.id, url: cover});
-      if (!t.ok) console.log(`thumbnail skipped: ${t.skipped}`);
-    }
+    const cover = !it.cover ? null : /^https?:\/\//i.test(it.cover) ? it.cover : join(HERE, it.cover);
+    const t = await setShortThumbnail({token, videoId: video.id, videoBytes: bytes, cover});
+    console.log(t.ok ? `thumbnail set from ${t.source}` : `::warning::thumbnail NOT set on ${video.id}: ${t.skipped}`);
 
     // Record before anything else so a crash after upload cannot double-post.
     items[idx].posted = new Date().toISOString();

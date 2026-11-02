@@ -9,7 +9,7 @@
 
 import './net.js';   // retry transient network errors (run 37153961121 died on one)
 import {readFileSync} from 'node:fs';
-import {loadEnv, getAccessToken, fetchVideo, uploadVideo, setThumbnail, buildSnippet, fail, Abort} from './lib.js';
+import {loadEnv, getAccessToken, fetchVideo, uploadVideo, setThumbnail, setShortThumbnail, buildSnippet, fail, Abort} from './lib.js';
 
 function arg(name) {
   const i = process.argv.indexOf(`--${name}`);
@@ -58,10 +58,11 @@ async function main() {
   const actual = video.status?.privacyStatus;
   console.log(`uploaded https://youtube.com/watch?v=${id}`);
 
-  if (cover) {
-    const t = await setThumbnail({token, videoId: id, url: cover});
-    console.log(t.ok ? 'thumbnail set' : `thumbnail skipped: ${t.skipped}`);
-  }
+  // Shorts: 9:16 cover or frame 0. --long is a landscape video, so it keeps 16:9.
+  const t = process.argv.includes('--long')
+    ? (cover ? await setThumbnail({token, videoId: id, url: cover, landscapeOnly: true}) : {skipped: 'no --cover given'})
+    : await setShortThumbnail({token, videoId: id, videoBytes: bytes, cover});
+  console.log(t.ok ? `thumbnail set${t.source ? ` from ${t.source}` : ''}` : `thumbnail skipped: ${t.skipped}`);
 
   if (actual && actual !== env.YT_PRIVACY) {
     console.log(

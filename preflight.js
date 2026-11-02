@@ -106,8 +106,7 @@ async function main() {
     const title = buildSnippet({caption: it.caption, title: it.title, categoryId: env.YT_CATEGORY_ID}).title;
     console.log(`  ${mark}  ${it.at.slice(0, 10)}  ${r.note.padEnd(28)}  ${title.slice(0, 52)}`);
     if (!r.ok && soon) broken.push({at: it.at, note: r.note});
-    // The thumbnail shape too: a portrait cover uploads "fine" and then shows up
-    // pillarboxed on YouTube, which Sam was fixing by hand after each post.
+    // The cover has to load. Its shape no longer matters: a landscape one is replaced by frame 0.
     if (it.cover) {
       const c = await coverShape(it.cover);
       if (!c.ok) { console.log(`  FAIL  ${it.at.slice(0, 10)}  ${c.note}`); broken.push({at: it.at, note: c.note}); }
