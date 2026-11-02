@@ -58,7 +58,9 @@ export async function probe(url) {
   const total = Number(res.headers.get('content-length')) || 0;
   res.body?.cancel();
 
-  if (!/^(video|image)\//.test(type)) return {ok: false, note: `content-type ${type || 'unknown'}`};
+  // GitHub release assets come back as application/octet-stream; fetchVideo() does not read the type (as in ig-publisher).
+  const binary = type.startsWith('application/octet-stream') && /\.(mp4|jpe?g|png)(\?|$)/i.test(url);
+  if (!/^(video|image)\//.test(type) && !binary) return {ok: false, note: `content-type ${type || 'unknown'}`};
   // fetchVideo() treats anything under 10 kB as a wrong URL, so flag it here
   // rather than letting the upload step discover it at publish time.
   if (total && total < 10_000) return {ok: false, note: `only ${total} bytes — wrong URL?`};
