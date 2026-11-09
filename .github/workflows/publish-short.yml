@@ -4,6 +4,7 @@ name: Publish one Short
 # result back into queue.json, which this workflow commits. That commit is what
 # stops the same video going up twice.
 on:
+  workflow_dispatch:   # 9 Nov: manual kick for days GitHub's scheduler lags (repos are public, minutes are free)
   schedule:
   # Narrowed 2026-09-09. Running every 15 min around the clock was 8,670 runs a
   # month across the three repos - past the Actions quota on private repos, and
