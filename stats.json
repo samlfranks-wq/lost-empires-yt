@@ -1,62 +1,74 @@
 {
   "platform": "youtube",
-  "generated_at": "2026-11-09T18:03:40.438Z",
+  "generated_at": "2026-11-09T19:43:47.126Z",
   "channel": {
     "id": "UCQl8tsRC_XygaNg8Cbu6YWg",
     "title": "Lost Empires",
     "subscribers": 186,
-    "total_views": 124864,
-    "video_count": 121
+    "total_views": 126017,
+    "video_count": 122
   },
   "analytics_28d": null,
   "totals": {
     "videos": 30,
-    "views": 27343,
-    "likes": 429,
-    "comments": 17,
-    "like_rate": 1.57
+    "views": 26216,
+    "likes": 424,
+    "comments": 16,
+    "like_rate": 1.62
   },
   "videos": [
     {
+      "id": "VYdskNLtBEA",
+      "posted_at": "2026-11-09T18:03:51Z",
+      "age_h": 1.67,
+      "title": "The Maltese Aren't Arabs (Map Explained) #Shorts",
+      "url": "https://youtu.be/VYdskNLtBEA",
+      "duration": "PT53S",
+      "privacy": "public",
+      "views": 39,
+      "likes": 3,
+      "comments": 0
+    },
+    {
       "id": "nuLcBj5f5hY",
       "posted_at": "2026-11-08T15:55:05Z",
-      "age_h": 26.14,
+      "age_h": 27.81,
       "title": "Pakistanis Aren't Arabs (Map Explained) #Shorts",
       "url": "https://youtu.be/nuLcBj5f5hY",
       "duration": "PT53S",
       "privacy": "public",
-      "views": 1024,
+      "views": 1025,
       "likes": 10,
       "comments": 0
     },
     {
       "id": "6tE0F1IfME4",
       "posted_at": "2026-11-07T15:37:32Z",
-      "age_h": 50.44,
+      "age_h": 52.1,
       "title": "Why Does Andorra Exist? (Map Explained) #Shorts",
       "url": "https://youtu.be/6tE0F1IfME4",
       "duration": "PT1M",
       "privacy": "public",
-      "views": 1036,
+      "views": 1038,
       "likes": 23,
       "comments": 0
     },
     {
       "id": "ZJrPgrZlKbE",
       "posted_at": "2026-11-06T16:42:21Z",
-      "age_h": 73.36,
+      "age_h": 75.02,
       "title": "Why Albania Built 170,000 Bunkers (Map Explained) #Shorts",
       "url": "https://youtu.be/ZJrPgrZlKbE",
       "duration": "PT1M1S",
       "privacy": "public",
-      "views": 179,
+      "views": 180,
       "likes": 3,
       "comments": 1
     },
     {
       "id": "0A6lQfE4bSM",
       "posted_at": "2026-11-05T17:19:35Z",
-      "age_h": 96.73,
+      "age_h": 98.4,
       "title": "The History of Kazakhstan (Map Explained) #Shorts",
       "url": "https://youtu.be/0A6lQfE4bSM",
       "duration": "PT1M7S",
@@ -68,7 +80,7 @@
     {
       "id": "jf5ScWtosuY",
       "posted_at": "2026-11-04T17:05:32Z",
-      "age_h": 120.97,
+      "age_h": 122.64,
       "title": "Why Couldn't Rome Conquer Persia? (Map Explained) #Shorts",
       "url": "https://youtu.be/jf5ScWtosuY",
       "duration": "PT55S",
@@ -80,7 +92,7 @@
     {
       "id": "sozEJFwr8O0",
       "posted_at": "2026-11-03T16:58:36Z",
-      "age_h": 145.08,
+      "age_h": 146.75,
       "title": "How Did Mongolia Become Independent From China? (Map Explained) #Shorts",
       "url": "https://youtu.be/sozEJFwr8O0",
       "duration": "PT48S",
@@ -92,7 +104,7 @@
     {
       "id": "X4CT60BhZaM",
       "posted_at": "2026-11-03T00:53:50Z",
-      "age_h": 161.16,
+      "age_h": 162.83,
       "title": "How Did Finland Become Independent? (Map Explained) #Shorts",
       "url": "https://youtu.be/X4CT60BhZaM",
       "duration": "PT47S",
@@ -104,7 +116,7 @@
     {
       "id": "wU10hvxXzrA",
       "posted_at": "2026-11-02T19:25:34Z",
-      "age_h": 166.64,
+      "age_h": 168.3,
       "title": "Why Is Chile So Long and Thin? (Map Explained) #Shorts",
       "url": "https://youtu.be/wU10hvxXzrA",
       "duration": "PT49S",
@@ -116,7 +128,7 @@
     {
       "id": "9ZQ6ZTibc-I",
       "posted_at": "2026-11-01T21:57:20Z",
-      "age_h": 188.11,
+      "age_h": 189.77,
       "title": "The Time Western Australia Voted to Leave Australia (Map Explained) #Shorts",
       "url": "https://youtu.be/9ZQ6ZTibc-I",
       "duration": "PT48S",
@@ -128,7 +140,7 @@
     {
       "id": "_8fMOqZPKSk",
       "posted_at": "2026-11-01T15:57:27Z",
-      "age_h": 194.1,
+      "age_h": 195.77,
       "title": "Why Is There a Country Inside South Africa? (Map Explained) #Shorts",
       "url": "https://youtu.be/_8fMOqZPKSk",
       "duration": "PT55S",
@@ -140,7 +152,7 @@
     {
       "id": "Lie3VqTAGr4",
       "posted_at": "2026-11-01T00:11:28Z",
-      "age_h": 209.87,
+      "age_h": 211.54,
       "title": "A WW1 Trench Wanted You Dead. Would You Have Lasted a Week? #Shorts",
       "url": "https://youtu.be/Lie3VqTAGr4",
       "duration": "PT49S",
@@ -152,7 +164,7 @@
     {
       "id": "tVjYAjWexTk",
       "posted_at": "2026-10-31T21:24:59Z",
-      "age_h": 212.64,
+      "age_h": 214.31,
       "title": "Why Does Bolivia Have No Coast? (Map Explained) #Shorts",
       "url": "https://youtu.be/tVjYAjWexTk",
       "duration": "PT46S",
@@ -164,7 +176,7 @@
     {
       "id": "Jp8-gImub-Q",
       "posted_at": "2026-10-31T15:15:47Z",
-      "age_h": 218.8,
+      "age_h": 220.47,
       "title": "Why Did Bangladesh Split From Pakistan? (Map Explained) #Shorts",
       "url": "https://youtu.be/Jp8-gImub-Q",
       "duration": "PT50S",
@@ -176,7 +188,7 @@
     {
       "id": "UN-WTw79La0",
       "posted_at": "2026-10-30T19:53:33Z",
-      "age_h": 238.17,
+      "age_h": 239.84,
       "title": "How Did Norway Become Independent? (Map Explained) #Shorts",
       "url": "https://youtu.be/UN-WTw79La0",
       "duration": "PT49S",
@@ -188,7 +200,7 @@
     {
       "id": "5KjMhWDV38c",
       "posted_at": "2026-10-30T15:50:25Z",
-      "age_h": 242.22,
+      "age_h": 243.89,
       "title": "Why Is the Vatican a Country? (Map Explained) #Shorts",
       "url": "https://youtu.be/5KjMhWDV38c",
       "duration": "PT44S",
@@ -200,7 +212,7 @@
     {
       "id": "PmA4iZdABKY",
       "posted_at": "2026-10-29T20:07:42Z",
-      "age_h": 261.93,
+      "age_h": 263.6,
       "title": "Why Does Brazil Speak Portuguese? (Map Explained) #Shorts",
       "url": "https://youtu.be/PmA4iZdABKY",
       "duration": "PT49S",
@@ -212,7 +224,7 @@
     {
       "id": "Q4O7u68FImY",
       "posted_at": "2026-10-29T18:00:33Z",
-      "age_h": 264.05,
+      "age_h": 265.72,
       "title": "Which Ancient Civilization Would You Survive? (Explained with Stickmen)",
       "url": "https://youtu.be/Q4O7u68FImY",
       "duration": "PT4M39S",
@@ -224,7 +236,7 @@
     {
       "id": "J-JcApo0U6M",
       "posted_at": "2026-10-29T16:00:35Z",
-      "age_h": 266.05,
+      "age_h": 267.72,
       "title": "Why Isn't Austria Part of Germany? (Map Explained) #Shorts",
       "url": "https://youtu.be/J-JcApo0U6M",
       "duration": "PT50S",
@@ -236,7 +248,7 @@
     {
       "id": "q1pKW9QOs8U",
       "posted_at": "2026-10-28T22:29:56Z",
-      "age_h": 283.56,
+      "age_h": 285.23,
       "title": "How Was the Netherlands Formed? (Map Explained) #Shorts",
       "url": "https://youtu.be/q1pKW9QOs8U",
       "duration": "PT49S",
@@ -248,7 +260,7 @@
     {
       "id": "HU6Fb1KDiHQ",
       "posted_at": "2026-10-28T16:17:52Z",
-      "age_h": 289.76,
+      "age_h": 291.43,
       "title": "Why Was Singapore Kicked Out of Malaysia? (Map Explained) #Shorts",
       "url": "https://youtu.be/HU6Fb1KDiHQ",
       "duration": "PT52S",
@@ -260,7 +272,7 @@
     {
       "id": "7vTLtFU_oG4",
       "posted_at": "2026-10-27T19:58:40Z",
-      "age_h": 310.08,
+      "age_h": 311.75,
       "title": "Why Does Panama Exist? (Map Explained) #Shorts",
       "url": "https://youtu.be/7vTLtFU_oG4",
       "duration": "PT47S",
@@ -272,7 +284,7 @@
     {
       "id": "SKK5WI2C5KQ",
       "posted_at": "2026-10-26T20:23:11Z",
-      "age_h": 333.67,
+      "age_h": 335.34,
       "title": "Why Does Uruguay Exist? (Map Explained) #Shorts",
       "url": "https://youtu.be/SKK5WI2C5KQ",
       "duration": "PT47S",
@@ -284,7 +296,7 @@
     {
       "id": "_dznE6LBbgk",
       "posted_at": "2026-10-25T18:18:08Z",
-      "age_h": 359.76,
+      "age_h": 361.43,
       "title": "How the Mongols Destroyed Baghdad in 12 Days (Map Explained) #Shorts",
       "url": "https://youtu.be/_dznE6LBbgk",
       "duration": "PT53S",
@@ -296,7 +308,7 @@
     {
       "id": "vZZPZsYs6o4",
       "posted_at": "2026-10-24T18:00:31Z",
-      "age_h": 384.05,
+      "age_h": 385.72,
       "title": "How Tiny Portugal Built the First Global Empire (Map Explained) #Shorts",
       "url": "https://youtu.be/vZZPZsYs6o4",
       "duration": "PT1M6S",
@@ -308,7 +320,7 @@
     {
       "id": "QyL3ShOabdc",
       "posted_at": "2026-10-23T18:59:41Z",
-      "age_h": 407.07,
+      "age_h": 408.74,
       "title": "How Russia Conquered Siberia in 60 Years (Map Explained) #Shorts",
       "url": "https://youtu.be/QyL3ShOabdc",
       "duration": "PT53S",
@@ -320,7 +332,7 @@
     {
       "id": "PvTP0keLnVs",
       "posted_at": "2026-10-22T19:06:25Z",
-      "age_h": 430.95,
+      "age_h": 432.62,
       "title": "How Did Sweden Stay Neutral in WW2? (Map Explained) #Shorts",
       "url": "https://youtu.be/PvTP0keLnVs",
       "duration": "PT55S",
@@ -332,7 +344,7 @@
     {
       "id": "HZchQrAkQpw",
       "posted_at": "2026-10-22T18:00:38Z",
-      "age_h": 432.05,
+      "age_h": 433.72,
       "title": "10 Nations That Aren't What You Think (Explained on Maps)",
       "url": "https://youtu.be/HZchQrAkQpw",
       "duration": "PT9M52S",
@@ -344,7 +356,7 @@
     {
       "id": "84AQStZhu5Y",
       "posted_at": "2026-10-20T19:05:51Z",
-      "age_h": 478.96,
+      "age_h": 480.63,
       "title": "Why Did Czechoslovakia Split? (Map Explained) #Shorts",
       "url": "https://youtu.be/84AQStZhu5Y",
       "duration": "PT59S",
@@ -356,7 +368,7 @@
     {
       "id": "0CBkLLVqF_k",
       "posted_at": "2026-10-19T20:29:15Z",
-      "age_h": 501.57,
+      "age_h": 503.24,
       "title": "Why Did Romania Switch Sides in WW2? (Map Explained) #Shorts",
       "url": "https://youtu.be/0CBkLLVqF_k",
       "duration": "PT1M",
@@ -364,18 +376,6 @@
       "views": 1358,
       "likes": 17,
       "comments": 2
-    },
-    {
-      "id": "fB7MZFJtsxQ",
-      "posted_at": "2026-10-18T20:32:22Z",
-      "age_h": 525.52,
-      "title": "How Did Britain Rule 24% of the World? (Map Explained) #Shorts",
-      "url": "https://youtu.be/fB7MZFJtsxQ",
-      "duration": "PT1M2S",
-      "privacy": "public",
-      "views": 1170,
-      "likes": 8,
-      "comments": 1
     }
   ]
 }
