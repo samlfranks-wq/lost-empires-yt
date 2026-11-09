@@ -86,9 +86,9 @@ jobs:
           YT_CHANNEL_ID: ${{ secrets.YT_CHANNEL_ID }}
           YT_CATEGORY_ID: ${{ secrets.YT_CATEGORY_ID }}
           YT_PRIVACY: ${{ secrets.YT_PRIVACY }}
-          MAX_PER_DAY: '2'                # two-a-day TEST (Sam, 2026-10-28); queue.js reverts to one a day after TWO_A_DAY_UNTIL
+          MAX_PER_DAY: '2'                # PERMANENT two a day (Sam, 2026-11-09: "2 posts every day across all platforms"); slots 12:00Z + 18:00Z
           MIN_GAP_H: '4'
-          TWO_A_DAY_UNTIL: '2026-11-03'
+          TWO_A_DAY_UNTIL: '2099-12-31'   # was 2026-11-03 (end of the test); no end date now
         shell: bash
         run: |
           set -o pipefail
