@@ -1,50 +1,62 @@
 {
   "platform": "youtube",
-  "generated_at": "2026-11-14T12:12:19.661Z",
+  "generated_at": "2026-11-14T15:44:16.371Z",
   "channel": {
     "id": "UCQl8tsRC_XygaNg8Cbu6YWg",
     "title": "Lost Empires",
-    "subscribers": 201,
+    "subscribers": 206,
     "total_views": 135035,
-    "video_count": 132
+    "video_count": 133
   },
   "analytics_28d": null,
   "totals": {
     "videos": 30,
-    "views": 25416,
-    "likes": 419,
+    "views": 25861,
+    "likes": 424,
     "comments": 21,
-    "like_rate": 1.65
+    "like_rate": 1.64
   },
   "videos": [
     {
+      "id": "RxKYunXf1RM",
+      "posted_at": "2026-11-14T12:12:46Z",
+      "age_h": 3.53,
+      "title": "The Iceman's Closest Relatives Are Sardinian (DNA Map) #Shorts",
+      "url": "https://youtu.be/RxKYunXf1RM",
+      "duration": "PT44S",
+      "privacy": "public",
+      "views": 699,
+      "likes": 18,
+      "comments": 1
+    },
+    {
       "id": "ApVzmcOujBI",
       "posted_at": "2026-11-14T03:30:49Z",
-      "age_h": 8.69,
+      "age_h": 12.22,
       "title": "Arabic Numerals Aren't Arabic, They're Indian (Map Explained) #Shorts",
       "url": "https://youtu.be/ApVzmcOujBI",
       "duration": "PT40S",
       "privacy": "public",
-      "views": 872,
+      "views": 1110,
       "likes": 11,
       "comments": 4
     },
     {
       "id": "2e8Z4B934Go",
       "posted_at": "2026-11-13T16:13:19Z",
-      "age_h": 19.98,
+      "age_h": 23.52,
       "title": "Ireland Gave Scotland Its Name (Map Explained) #Shorts",
       "url": "https://youtu.be/2e8Z4B934Go",
       "duration": "PT40S",
       "privacy": "public",
-      "views": 222,
+      "views": 223,
       "likes": 0,
       "comments": 0
     },
     {
       "id": "HFjASs_kSw0",
       "posted_at": "2026-11-13T12:09:32Z",
-      "age_h": 24.05,
+      "age_h": 27.58,
       "title": "Four Countries, One Language: Serbo-Croatian (Map Explained) #Shorts",
       "url": "https://youtu.be/HFjASs_kSw0",
       "duration": "PT41S",
@@ -56,43 +68,43 @@
     {
       "id": "CpK6GA5AdIU",
       "posted_at": "2026-11-13T03:33:24Z",
-      "age_h": 32.65,
+      "age_h": 36.18,
       "title": "Almost Every Indian Is a Mix of Two Ancient Peoples (DNA Map) #Shorts",
       "url": "https://youtu.be/CpK6GA5AdIU",
       "duration": "PT46S",
       "privacy": "public",
-      "views": 1158,
+      "views": 1159,
       "likes": 13,
       "comments": 2
     },
     {
       "id": "VejAPbDGtsQ",
       "posted_at": "2026-11-12T21:47:25Z",
-      "age_h": 38.42,
+      "age_h": 41.95,
       "title": "Romanians Speak Latin, Surrounded by Slavs (Map Explained) #Shorts",
       "url": "https://youtu.be/VejAPbDGtsQ",
       "duration": "PT41S",
       "privacy": "public",
-      "views": 1277,
+      "views": 1294,
       "likes": 14,
       "comments": 1
     },
     {
       "id": "UVuxT4QMfRo",
       "posted_at": "2026-11-12T17:31:04Z",
-      "age_h": 42.69,
+      "age_h": 46.22,
       "title": "Half of Japanese Comes From Chinese (Map Explained) #Shorts",
       "url": "https://youtu.be/UVuxT4QMfRo",
       "duration": "PT42S",
       "privacy": "public",
-      "views": 948,
-      "likes": 11,
+      "views": 1023,
+      "likes": 13,
       "comments": 2
     },
     {
       "id": "qd42w2QTcqE",
       "posted_at": "2026-11-11T21:49:40Z",
-      "age_h": 62.38,
+      "age_h": 65.91,
       "title": "Hindi and English Are Cousins (Map Explained) #Shorts",
       "url": "https://youtu.be/qd42w2QTcqE",
       "duration": "PT43S",
@@ -104,7 +116,7 @@
     {
       "id": "zA7yhSMZLLU",
       "posted_at": "2026-11-11T17:02:51Z",
-      "age_h": 67.16,
+      "age_h": 70.69,
       "title": "Ireland's DNA Still Follows Its Old Kingdoms (DNA Map) #Shorts",
       "url": "https://youtu.be/zA7yhSMZLLU",
       "duration": "PT41S",
@@ -116,7 +128,7 @@
     {
       "id": "GlRPoOYnubw",
       "posted_at": "2026-11-10T21:14:54Z",
-      "age_h": 86.96,
+      "age_h": 90.49,
       "title": "Norway Writes Like Denmark (Map Explained) #Shorts",
       "url": "https://youtu.be/GlRPoOYnubw",
       "duration": "PT49S",
@@ -128,7 +140,7 @@
     {
       "id": "RmlFc818I80",
       "posted_at": "2026-11-10T16:58:48Z",
-      "age_h": 91.23,
+      "age_h": 94.76,
       "title": "Spain's DNA Runs in Stripes (DNA Map) #Shorts",
       "url": "https://youtu.be/RmlFc818I80",
       "duration": "PT1M8S",
@@ -140,7 +152,7 @@
     {
       "id": "VYdskNLtBEA",
       "posted_at": "2026-11-09T18:03:51Z",
-      "age_h": 114.14,
+      "age_h": 117.67,
       "title": "The Maltese Aren't Arabs (Map Explained) #Shorts",
       "url": "https://youtu.be/VYdskNLtBEA",
       "duration": "PT53S",
@@ -152,7 +164,7 @@
     {
       "id": "nuLcBj5f5hY",
       "posted_at": "2026-11-08T15:55:05Z",
-      "age_h": 140.29,
+      "age_h": 143.82,
       "title": "Pakistanis Aren't Arabs (Map Explained) #Shorts",
       "url": "https://youtu.be/nuLcBj5f5hY",
       "duration": "PT53S",
@@ -164,7 +176,7 @@
     {
       "id": "6tE0F1IfME4",
       "posted_at": "2026-11-07T15:37:32Z",
-      "age_h": 164.58,
+      "age_h": 168.11,
       "title": "Why Does Andorra Exist? (Map Explained) #Shorts",
       "url": "https://youtu.be/6tE0F1IfME4",
       "duration": "PT1M",
@@ -176,7 +188,7 @@
     {
       "id": "ZJrPgrZlKbE",
       "posted_at": "2026-11-06T16:42:21Z",
-      "age_h": 187.5,
+      "age_h": 191.03,
       "title": "Why Albania Built 170,000 Bunkers (Map Explained) #Shorts",
       "url": "https://youtu.be/ZJrPgrZlKbE",
       "duration": "PT1M1S",
@@ -188,7 +200,7 @@
     {
       "id": "0A6lQfE4bSM",
       "posted_at": "2026-11-05T17:19:35Z",
-      "age_h": 210.88,
+      "age_h": 214.41,
       "title": "The History of Kazakhstan (Map Explained) #Shorts",
       "url": "https://youtu.be/0A6lQfE4bSM",
       "duration": "PT1M7S",
@@ -200,7 +212,7 @@
     {
       "id": "jf5ScWtosuY",
       "posted_at": "2026-11-04T17:05:32Z",
-      "age_h": 235.11,
+      "age_h": 238.65,
       "title": "Why Couldn't Rome Conquer Persia? (Map Explained) #Shorts",
       "url": "https://youtu.be/jf5ScWtosuY",
       "duration": "PT55S",
@@ -212,7 +224,7 @@
     {
       "id": "sozEJFwr8O0",
       "posted_at": "2026-11-03T16:58:36Z",
-      "age_h": 259.23,
+      "age_h": 262.76,
       "title": "How Did Mongolia Become Independent From China? (Map Explained) #Shorts",
       "url": "https://youtu.be/sozEJFwr8O0",
       "duration": "PT48S",
@@ -224,7 +236,7 @@
     {
       "id": "X4CT60BhZaM",
       "posted_at": "2026-11-03T00:53:50Z",
-      "age_h": 275.31,
+      "age_h": 278.84,
       "title": "How Did Finland Become Independent? (Map Explained) #Shorts",
       "url": "https://youtu.be/X4CT60BhZaM",
       "duration": "PT47S",
@@ -236,7 +248,7 @@
     {
       "id": "wU10hvxXzrA",
       "posted_at": "2026-11-02T19:25:34Z",
-      "age_h": 280.78,
+      "age_h": 284.31,
       "title": "Why Is Chile So Long and Thin? (Map Explained) #Shorts",
       "url": "https://youtu.be/wU10hvxXzrA",
       "duration": "PT49S",
@@ -248,7 +260,7 @@
     {
       "id": "9ZQ6ZTibc-I",
       "posted_at": "2026-11-01T21:57:20Z",
-      "age_h": 302.25,
+      "age_h": 305.78,
       "title": "The Time Western Australia Voted to Leave Australia (Map Explained) #Shorts",
       "url": "https://youtu.be/9ZQ6ZTibc-I",
       "duration": "PT48S",
@@ -260,7 +272,7 @@
     {
       "id": "_8fMOqZPKSk",
       "posted_at": "2026-11-01T15:57:27Z",
-      "age_h": 308.25,
+      "age_h": 311.78,
       "title": "Why Is There a Country Inside South Africa? (Map Explained) #Shorts",
       "url": "https://youtu.be/_8fMOqZPKSk",
       "duration": "PT55S",
@@ -272,7 +284,7 @@
     {
       "id": "Lie3VqTAGr4",
       "posted_at": "2026-11-01T00:11:28Z",
-      "age_h": 324.01,
+      "age_h": 327.55,
       "title": "A WW1 Trench Wanted You Dead. Would You Have Lasted a Week? #Shorts",
       "url": "https://youtu.be/Lie3VqTAGr4",
       "duration": "PT49S",
@@ -284,7 +296,7 @@
     {
       "id": "tVjYAjWexTk",
       "posted_at": "2026-10-31T21:24:59Z",
-      "age_h": 326.79,
+      "age_h": 330.32,
       "title": "Why Does Bolivia Have No Coast? (Map Explained) #Shorts",
       "url": "https://youtu.be/tVjYAjWexTk",
       "duration": "PT46S",
@@ -296,7 +308,7 @@
     {
       "id": "Jp8-gImub-Q",
       "posted_at": "2026-10-31T15:15:47Z",
-      "age_h": 332.94,
+      "age_h": 336.47,
       "title": "Why Did Bangladesh Split From Pakistan? (Map Explained) #Shorts",
       "url": "https://youtu.be/Jp8-gImub-Q",
       "duration": "PT50S",
@@ -308,7 +320,7 @@
     {
       "id": "UN-WTw79La0",
       "posted_at": "2026-10-30T19:53:33Z",
-      "age_h": 352.31,
+      "age_h": 355.85,
       "title": "How Did Norway Become Independent? (Map Explained) #Shorts",
       "url": "https://youtu.be/UN-WTw79La0",
       "duration": "PT49S",
@@ -320,7 +332,7 @@
     {
       "id": "5KjMhWDV38c",
       "posted_at": "2026-10-30T15:50:25Z",
-      "age_h": 356.37,
+      "age_h": 359.9,
       "title": "Why Is the Vatican a Country? (Map Explained) #Shorts",
       "url": "https://youtu.be/5KjMhWDV38c",
       "duration": "PT44S",
@@ -332,7 +344,7 @@
     {
       "id": "PmA4iZdABKY",
       "posted_at": "2026-10-29T20:07:42Z",
-      "age_h": 376.08,
+      "age_h": 379.61,
       "title": "Why Does Brazil Speak Portuguese? (Map Explained) #Shorts",
       "url": "https://youtu.be/PmA4iZdABKY",
       "duration": "PT49S",
@@ -344,7 +356,7 @@
     {
       "id": "Q4O7u68FImY",
       "posted_at": "2026-10-29T18:00:33Z",
-      "age_h": 378.2,
+      "age_h": 381.73,
       "title": "Which Ancient Civilization Would You Survive? (Explained with Stickmen)",
       "url": "https://youtu.be/Q4O7u68FImY",
       "duration": "PT4M39S",
@@ -356,25 +368,13 @@
     {
       "id": "J-JcApo0U6M",
       "posted_at": "2026-10-29T16:00:35Z",
-      "age_h": 380.2,
+      "age_h": 383.73,
       "title": "Why Isn't Austria Part of Germany? (Map Explained) #Shorts",
       "url": "https://youtu.be/J-JcApo0U6M",
       "duration": "PT50S",
       "privacy": "public",
-      "views": 1389,
+      "views": 1390,
       "likes": 24,
-      "comments": 1
-    },
-    {
-      "id": "q1pKW9QOs8U",
-      "posted_at": "2026-10-28T22:29:56Z",
-      "age_h": 397.71,
-      "title": "How Was the Netherlands Formed? (Map Explained) #Shorts",
-      "url": "https://youtu.be/q1pKW9QOs8U",
-      "duration": "PT49S",
-      "privacy": "public",
-      "views": 587,
-      "likes": 15,
       "comments": 1
     }
   ]
