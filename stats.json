@@ -1,6 +1,6 @@
 {
   "platform": "youtube",
-  "generated_at": "2026-11-18T20:11:02.305Z",
+  "generated_at": "2026-11-18T22:31:10.020Z",
   "channel": {
     "id": "UCQl8tsRC_XygaNg8Cbu6YWg",
     "title": "Lost Empires",
@@ -11,28 +11,28 @@
   "analytics_28d": null,
   "totals": {
     "videos": 30,
-    "views": 29769,
-    "likes": 454,
-    "comments": 28,
-    "like_rate": 1.53
+    "views": 30285,
+    "likes": 474,
+    "comments": 29,
+    "like_rate": 1.57
   },
   "videos": [
     {
       "id": "jInl3hItQIo",
       "posted_at": "2026-11-18T17:57:29Z",
-      "age_h": 2.23,
+      "age_h": 4.56,
       "title": "Every Day, You Speak Aztec (Map Explained) #Shorts",
       "url": "https://youtu.be/jInl3hItQIo",
       "duration": "PT44S",
       "privacy": "public",
-      "views": 325,
-      "likes": 17,
-      "comments": 0
+      "views": 800,
+      "likes": 36,
+      "comments": 1
     },
     {
       "id": "86uG5CzmvMs",
       "posted_at": "2026-11-18T12:14:15Z",
-      "age_h": 7.95,
+      "age_h": 10.28,
       "title": "Most Indonesians Don't Speak Indonesian at Home (Map Explained) #Shorts",
       "url": "https://youtu.be/86uG5CzmvMs",
       "duration": "PT43S",
@@ -44,19 +44,19 @@
     {
       "id": "9AyGiW9Uaus",
       "posted_at": "2026-11-18T00:54:19Z",
-      "age_h": 19.28,
+      "age_h": 21.61,
       "title": "One Language Family Covers Almost Half of Africa (Map Explained) #Shorts",
       "url": "https://youtu.be/9AyGiW9Uaus",
       "duration": "PT46S",
       "privacy": "public",
-      "views": 1165,
+      "views": 1169,
       "likes": 25,
       "comments": 3
     },
     {
       "id": "3rSZiEG_XqU",
       "posted_at": "2026-11-17T18:26:34Z",
-      "age_h": 25.74,
+      "age_h": 28.08,
       "title": "East Germany Was Slavic (Map Explained) #Shorts",
       "url": "https://youtu.be/3rSZiEG_XqU",
       "duration": "PT42S",
@@ -68,43 +68,43 @@
     {
       "id": "vzonWqdZj8E",
       "posted_at": "2026-11-17T12:14:37Z",
-      "age_h": 31.94,
+      "age_h": 34.28,
       "title": "The Taíno Were Never Wiped Out (DNA Map) #Shorts",
       "url": "https://youtu.be/vzonWqdZj8E",
       "duration": "PT44S",
       "privacy": "public",
       "views": 1023,
-      "likes": 16,
+      "likes": 17,
       "comments": 1
     },
     {
       "id": "IzvLfB0bfsU",
       "posted_at": "2026-11-17T01:50:18Z",
-      "age_h": 42.35,
+      "age_h": 44.68,
       "title": "Iran, Afghanistan and Tajikistan Speak the Same Language (Map Explained) #Shorts",
       "url": "https://youtu.be/IzvLfB0bfsU",
       "duration": "PT42S",
       "privacy": "public",
-      "views": 1186,
+      "views": 1210,
       "likes": 13,
       "comments": 0
     },
     {
       "id": "rBzjA4rXw-w",
       "posted_at": "2026-11-16T19:30:32Z",
-      "age_h": 48.68,
+      "age_h": 51.01,
       "title": "Northern Europeans Get Half Their DNA From the Steppe (DNA Map) #Shorts",
       "url": "https://youtu.be/rBzjA4rXw-w",
       "duration": "PT45S",
       "privacy": "public",
-      "views": 1136,
+      "views": 1138,
       "likes": 14,
       "comments": 0
     },
     {
       "id": "1GWi3bvNrKw",
       "posted_at": "2026-11-16T12:16:09Z",
-      "age_h": 55.91,
+      "age_h": 58.25,
       "title": "Most French Speakers Are African (Map Explained) #Shorts",
       "url": "https://youtu.be/1GWi3bvNrKw",
       "duration": "PT45S",
@@ -116,7 +116,7 @@
     {
       "id": "ObkLGB497ww",
       "posted_at": "2026-11-16T02:24:41Z",
-      "age_h": 65.77,
+      "age_h": 68.11,
       "title": "India Has No National Language (Map Explained) #Shorts",
       "url": "https://youtu.be/ObkLGB497ww",
       "duration": "PT38S",
@@ -128,7 +128,7 @@
     {
       "id": "8G_FBYr6mlg",
       "posted_at": "2026-11-15T16:16:22Z",
-      "age_h": 75.91,
+      "age_h": 78.25,
       "title": "Spanish Was Spoken in America Before English (Map Explained) #Shorts",
       "url": "https://youtu.be/8G_FBYr6mlg",
       "duration": "PT42S",
@@ -140,19 +140,19 @@
     {
       "id": "lzq9nMvLYF8",
       "posted_at": "2026-11-15T16:11:37Z",
-      "age_h": 75.99,
+      "age_h": 78.33,
       "title": "Spanish Was Spoken in America Before English (Map Explained) #Shorts",
       "url": "https://youtu.be/lzq9nMvLYF8",
       "duration": "PT42S",
       "privacy": "public",
-      "views": 1057,
+      "views": 1060,
       "likes": 12,
       "comments": 0
     },
     {
       "id": "PcjxubGCd0U",
       "posted_at": "2026-11-15T12:11:42Z",
-      "age_h": 79.99,
+      "age_h": 82.32,
       "title": "Not All Arabs Can Understand Each Other (Map Explained) #Shorts",
       "url": "https://youtu.be/PcjxubGCd0U",
       "duration": "PT43S",
@@ -164,19 +164,19 @@
     {
       "id": "ARjGwxBeSCQ",
       "posted_at": "2026-11-15T01:58:39Z",
-      "age_h": 90.21,
+      "age_h": 92.54,
       "title": "Hindi and Urdu Are the Same Language (Map Explained) #Shorts",
       "url": "https://youtu.be/ARjGwxBeSCQ",
       "duration": "PT41S",
       "privacy": "public",
-      "views": 1384,
+      "views": 1389,
       "likes": 17,
       "comments": 0
     },
     {
       "id": "6vVNFmMcv7c",
       "posted_at": "2026-11-14T19:50:33Z",
-      "age_h": 96.34,
+      "age_h": 98.68,
       "title": "English's Closest Relative Isn't German (Map Explained) #Shorts",
       "url": "https://youtu.be/6vVNFmMcv7c",
       "duration": "PT36S",
@@ -188,7 +188,7 @@
     {
       "id": "RxKYunXf1RM",
       "posted_at": "2026-11-14T12:12:46Z",
-      "age_h": 103.97,
+      "age_h": 106.31,
       "title": "The Iceman's Closest Relatives Are Sardinian (DNA Map) #Shorts",
       "url": "https://youtu.be/RxKYunXf1RM",
       "duration": "PT44S",
@@ -200,7 +200,7 @@
     {
       "id": "ApVzmcOujBI",
       "posted_at": "2026-11-14T03:30:49Z",
-      "age_h": 112.67,
+      "age_h": 115.01,
       "title": "Arabic Numerals Aren't Arabic, They're Indian (Map Explained) #Shorts",
       "url": "https://youtu.be/ApVzmcOujBI",
       "duration": "PT40S",
@@ -212,7 +212,7 @@
     {
       "id": "2e8Z4B934Go",
       "posted_at": "2026-11-13T16:13:19Z",
-      "age_h": 123.96,
+      "age_h": 126.3,
       "title": "Ireland Gave Scotland Its Name (Map Explained) #Shorts",
       "url": "https://youtu.be/2e8Z4B934Go",
       "duration": "PT40S",
@@ -224,7 +224,7 @@
     {
       "id": "HFjASs_kSw0",
       "posted_at": "2026-11-13T12:09:32Z",
-      "age_h": 128.03,
+      "age_h": 130.36,
       "title": "Four Countries, One Language: Serbo-Croatian (Map Explained) #Shorts",
       "url": "https://youtu.be/HFjASs_kSw0",
       "duration": "PT41S",
@@ -236,7 +236,7 @@
     {
       "id": "CpK6GA5AdIU",
       "posted_at": "2026-11-13T03:33:24Z",
-      "age_h": 136.63,
+      "age_h": 138.96,
       "title": "Almost Every Indian Is a Mix of Two Ancient Peoples (DNA Map) #Shorts",
       "url": "https://youtu.be/CpK6GA5AdIU",
       "duration": "PT46S",
@@ -248,19 +248,19 @@
     {
       "id": "VejAPbDGtsQ",
       "posted_at": "2026-11-12T21:47:25Z",
-      "age_h": 142.39,
+      "age_h": 144.73,
       "title": "Romanians Speak Latin, Surrounded by Slavs (Map Explained) #Shorts",
       "url": "https://youtu.be/VejAPbDGtsQ",
       "duration": "PT41S",
       "privacy": "public",
-      "views": 1437,
+      "views": 1438,
       "likes": 15,
       "comments": 1
     },
     {
       "id": "UVuxT4QMfRo",
       "posted_at": "2026-11-12T17:31:04Z",
-      "age_h": 146.67,
+      "age_h": 149,
       "title": "Half of Japanese Comes From Chinese (Map Explained) #Shorts",
       "url": "https://youtu.be/UVuxT4QMfRo",
       "duration": "PT42S",
@@ -272,7 +272,7 @@
     {
       "id": "qd42w2QTcqE",
       "posted_at": "2026-11-11T21:49:40Z",
-      "age_h": 166.36,
+      "age_h": 168.69,
       "title": "Hindi and English Are Cousins (Map Explained) #Shorts",
       "url": "https://youtu.be/qd42w2QTcqE",
       "duration": "PT43S",
@@ -284,7 +284,7 @@
     {
       "id": "zA7yhSMZLLU",
       "posted_at": "2026-11-11T17:02:51Z",
-      "age_h": 171.14,
+      "age_h": 173.47,
       "title": "Ireland's DNA Still Follows Its Old Kingdoms (DNA Map) #Shorts",
       "url": "https://youtu.be/zA7yhSMZLLU",
       "duration": "PT41S",
@@ -296,7 +296,7 @@
     {
       "id": "GlRPoOYnubw",
       "posted_at": "2026-11-10T21:14:54Z",
-      "age_h": 190.94,
+      "age_h": 193.27,
       "title": "Norway Writes Like Denmark (Map Explained) #Shorts",
       "url": "https://youtu.be/GlRPoOYnubw",
       "duration": "PT49S",
@@ -308,19 +308,19 @@
     {
       "id": "RmlFc818I80",
       "posted_at": "2026-11-10T16:58:48Z",
-      "age_h": 195.2,
+      "age_h": 197.54,
       "title": "Spain's DNA Runs in Stripes (DNA Map) #Shorts",
       "url": "https://youtu.be/RmlFc818I80",
       "duration": "PT1M8S",
       "privacy": "public",
-      "views": 1084,
+      "views": 1086,
       "likes": 17,
       "comments": 1
     },
     {
       "id": "VYdskNLtBEA",
       "posted_at": "2026-11-09T18:03:51Z",
-      "age_h": 218.12,
+      "age_h": 220.46,
       "title": "The Maltese Aren't Arabs (Map Explained) #Shorts",
       "url": "https://youtu.be/VYdskNLtBEA",
       "duration": "PT53S",
@@ -332,7 +332,7 @@
     {
       "id": "nuLcBj5f5hY",
       "posted_at": "2026-11-08T15:55:05Z",
-      "age_h": 244.27,
+      "age_h": 246.6,
       "title": "Pakistanis Aren't Arabs (Map Explained) #Shorts",
       "url": "https://youtu.be/nuLcBj5f5hY",
       "duration": "PT53S",
@@ -344,7 +344,7 @@
     {
       "id": "6tE0F1IfME4",
       "posted_at": "2026-11-07T15:37:32Z",
-      "age_h": 268.56,
+      "age_h": 270.89,
       "title": "Why Does Andorra Exist? (Map Explained) #Shorts",
       "url": "https://youtu.be/6tE0F1IfME4",
       "duration": "PT1M",
@@ -356,7 +356,7 @@
     {
       "id": "ZJrPgrZlKbE",
       "posted_at": "2026-11-06T16:42:21Z",
-      "age_h": 291.48,
+      "age_h": 293.81,
       "title": "Why Albania Built 170,000 Bunkers (Map Explained) #Shorts",
       "url": "https://youtu.be/ZJrPgrZlKbE",
       "duration": "PT1M1S",
@@ -368,7 +368,7 @@
     {
       "id": "0A6lQfE4bSM",
       "posted_at": "2026-11-05T17:19:35Z",
-      "age_h": 314.86,
+      "age_h": 317.19,
       "title": "The History of Kazakhstan (Map Explained) #Shorts",
       "url": "https://youtu.be/0A6lQfE4bSM",
       "duration": "PT1M7S",
